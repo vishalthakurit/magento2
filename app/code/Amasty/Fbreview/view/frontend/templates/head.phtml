@@ -1,0 +1,15 @@
+<?php
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2019 Amasty (https://www.amasty.com)
+ * @package Amasty_Fbreview
+ */
+?>
+<?php
+    /** @var \Amasty\Fbreview\Block\FbHead $block */
+    $product = $block->getProduct();
+?>
+
+<?php if ($product) : ?>
+    <meta property="fb:app_id" content="<?= $block->escapeHtml($block->getContent()); ?>" />
+<?php endif ?>

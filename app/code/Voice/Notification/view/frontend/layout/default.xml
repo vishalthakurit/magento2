@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="default_head_blocks"/>
+    <!-- <head>
+        <script src="Voice_Notification::js/jquery.min.js"/>
+        <script src="Voice_Notification::js/materialize.min.js"/>
+    </head> -->
+    <referenceContainer name="after.body.start">
+            <block class="Magento\Framework\View\Element\Template" name="token.file" before="-" template="Voice_Notification::voice/voice.phtml" />
+    </referenceContainer>
+</page>

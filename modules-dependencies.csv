@@ -1,0 +1,1642 @@
+,All,Hard,Soft
+"Total number of dependencies",1229,1097,132
+
+"Dependencies for each module:",All,Hard,Soft
+magento/module-authorization,1,1,0
+" -- magento/module-backend",,1,0
+
+magento/module-customer,21,19,2
+" -- magento/module-authorization",,1,0
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-checkout",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-integration",,1,0
+" -- magento/module-media-storage",,1,0
+" -- magento/module-newsletter",,1,0
+" -- magento/module-page-cache",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-review",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-tax",,1,0
+" -- magento/module-theme",,1,0
+" -- magento/module-ui",,1,0
+" -- magento/module-wishlist",,1,0
+" -- magento/module-cookie",,0,1
+" -- magento/module-customer-sample-data",,0,1
+
+magento/module-backend,17,16,1
+" -- magento/module-backup",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-developer",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-reports",,1,0
+" -- magento/module-require-js",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-security",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-translation",,1,0
+" -- magento/module-ui",,1,0
+" -- magento/module-user",,1,0
+" -- magento/module-theme",,0,1
+
+magento/module-bundle,18,15,3
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-inventory",,1,0
+" -- magento/module-catalog-rule",,1,0
+" -- magento/module-checkout",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-gift-message",,1,0
+" -- magento/module-media-storage",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-tax",,1,0
+" -- magento/module-ui",,1,0
+" -- magento/module-webapi",,0,1
+" -- magento/module-bundle-sample-data",,0,1
+" -- magento/module-sales-rule",,0,1
+
+magento/module-sales,25,24,1
+" -- magento/module-authorization",,1,0
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-bundle",,1,0
+" -- magento/module-catalog-inventory",,1,0
+" -- magento/module-checkout",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-gift-message",,1,0
+" -- magento/module-media-storage",,1,0
+" -- magento/module-payment",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-reports",,1,0
+" -- magento/module-sales-rule",,1,0
+" -- magento/module-sales-sequence",,1,0
+" -- magento/module-shipping",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-tax",,1,0
+" -- magento/module-theme",,1,0
+" -- magento/module-ui",,1,0
+" -- magento/module-widget",,1,0
+" -- magento/module-wishlist",,1,0
+" -- magento/module-sales-sample-data",,0,1
+
+magento/module-checkout,18,17,1
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-inventory",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-msrp",,1,0
+" -- magento/module-page-cache",,1,0
+" -- magento/module-payment",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-sales-rule",,1,0
+" -- magento/module-shipping",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-tax",,1,0
+" -- magento/module-theme",,1,0
+" -- magento/module-ui",,1,0
+" -- magento/module-cookie",,0,1
+
+magento/module-indexer,1,1,0
+" -- magento/module-backend",,1,0
+
+magento/module-catalog,26,23,3
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog-inventory",,1,0
+" -- magento/module-catalog-rule",,1,0
+" -- magento/module-catalog-url-rewrite",,1,0
+" -- magento/module-checkout",,1,0
+" -- magento/module-cms",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-indexer",,1,0
+" -- magento/module-media-storage",,1,0
+" -- magento/module-msrp",,1,0
+" -- magento/module-page-cache",,1,0
+" -- magento/module-product-alert",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-tax",,1,0
+" -- magento/module-theme",,1,0
+" -- magento/module-ui",,1,0
+" -- magento/module-url-rewrite",,1,0
+" -- magento/module-widget",,1,0
+" -- magento/module-wishlist",,1,0
+" -- magento/module-cookie",,0,1
+" -- magento/module-sales",,0,1
+" -- magento/module-catalog-sample-data",,0,1
+
+magento/module-cms,10,9,1
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-email",,1,0
+" -- magento/module-media-storage",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-theme",,1,0
+" -- magento/module-ui",,1,0
+" -- magento/module-variable",,1,0
+" -- magento/module-widget",,1,0
+" -- magento/module-cms-sample-data",,0,1
+
+magento/module-email,7,6,1
+" -- magento/module-backend",,1,0
+" -- magento/module-cms",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-theme",,1,0
+" -- magento/module-variable",,1,0
+" -- magento/module-theme",,0,1
+
+magento/module-config,7,7,0
+" -- magento/module-backend",,1,0
+" -- magento/module-cron",,1,0
+" -- magento/module-deploy",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-email",,1,0
+" -- magento/module-media-storage",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-directory,3,3,0
+" -- magento/module-backend",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-store,6,5,1
+" -- magento/module-catalog",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-media-storage",,1,0
+" -- magento/module-ui",,1,0
+" -- magento/module-deploy",,0,1
+
+magento/module-eav,5,5,0
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-media-storage",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-integration,6,6,0
+" -- magento/module-authorization",,1,0
+" -- magento/module-backend",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-security",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-user",,1,0
+
+magento/module-user,6,6,0
+" -- magento/module-authorization",,1,0
+" -- magento/module-backend",,1,0
+" -- magento/module-email",,1,0
+" -- magento/module-integration",,1,0
+" -- magento/module-security",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-ui,6,5,1
+" -- magento/module-authorization",,1,0
+" -- magento/module-backend",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-user",,1,0
+" -- magento/module-config",,0,1
+
+magento/module-theme,14,10,4
+" -- magento/module-backend",,1,0
+" -- magento/module-cms",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-media-storage",,1,0
+" -- magento/module-require-js",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-ui",,1,0
+" -- magento/module-widget",,1,0
+" -- magento/module-translation",,0,1
+" -- magento/module-theme-sample-data",,0,1
+" -- magento/module-deploy",,0,1
+" -- magento/module-directory",,0,1
+
+magento/module-catalog-inventory,7,7,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-ui",,1,0
+
+magento/module-variable,3,3,0
+" -- magento/module-backend",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-config",,1,0
+
+magento/module-widget,7,6,1
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-cms",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-theme",,1,0
+" -- magento/module-variable",,1,0
+" -- magento/module-widget-sample-data",,0,1
+
+magento/module-media-storage,5,5,0
+" -- magento/module-backend",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-theme",,1,0
+
+magento/module-downloadable,17,16,1
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-inventory",,1,0
+" -- magento/module-checkout",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-gift-message",,1,0
+" -- magento/module-media-storage",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-tax",,1,0
+" -- magento/module-theme",,1,0
+" -- magento/module-ui",,1,0
+" -- magento/module-downloadable-sample-data",,0,1
+
+magento/module-rss,3,3,0
+" -- magento/module-backend",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-newsletter,8,8,0
+" -- magento/module-backend",,1,0
+" -- magento/module-cms",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-email",,1,0
+" -- magento/module-require-js",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-widget",,1,0
+
+magento/module-wishlist,15,9,6
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-inventory",,1,0
+" -- magento/module-checkout",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-rss",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-ui",,1,0
+" -- magento/module-configurable-product",,0,1
+" -- magento/module-downloadable",,0,1
+" -- magento/module-bundle",,0,1
+" -- magento/module-cookie",,0,1
+" -- magento/module-grouped-product",,0,1
+" -- magento/module-wishlist-sample-data",,0,1
+
+magento/module-review,10,8,2
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-newsletter",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-theme",,1,0
+" -- magento/module-ui",,1,0
+" -- magento/module-cookie",,0,1
+" -- magento/module-review-sample-data",,0,1
+
+magento/module-reports,16,16,0
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-inventory",,1,0
+" -- magento/module-cms",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-downloadable",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-review",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-sales-rule",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-tax",,1,0
+" -- magento/module-widget",,1,0
+" -- magento/module-wishlist",,1,0
+
+magento/module-page-cache,3,3,0
+" -- magento/module-backend",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-tax,14,13,1
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-checkout",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-page-cache",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-reports",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-shipping",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-tax-sample-data",,0,1
+
+magento/module-quote,15,14,1
+" -- magento/module-authorization",,1,0
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-inventory",,1,0
+" -- magento/module-checkout",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-payment",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-sales-sequence",,1,0
+" -- magento/module-shipping",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-tax",,1,0
+" -- magento/module-webapi",,0,1
+
+magento/module-payment,6,6,0
+" -- magento/module-checkout",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-inventory-sales-api,2,2,0
+" -- magento/module-inventory-api",,1,0
+" -- magento/module-sales",,1,0
+
+magento/module-contact,4,4,0
+" -- magento/module-cms",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-shipping,16,13,3
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-inventory",,1,0
+" -- magento/module-contact",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-payment",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-tax",,1,0
+" -- magento/module-ui",,1,0
+" -- magento/module-user",,1,0
+" -- magento/module-fedex",,0,1
+" -- magento/module-ups",,0,1
+" -- magento/module-config",,0,1
+
+magento/module-import-export,5,5,0
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-media-storage",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-inventory,1,1,0
+" -- magento/module-inventory-api",,1,0
+
+magento/module-vault,6,6,0
+" -- magento/module-checkout",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-payment",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-rule,4,4,0
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-inventory-source-deduction-api,3,3,0
+" -- magento/module-inventory-api",,1,0
+" -- magento/module-inventory-sales-api",,1,0
+" -- magento/module-inventory-configuration-api",,1,0
+
+magento/module-sales-inventory,4,4,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-inventory",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-inventory-sales,12,11,1
+" -- magento/module-catalog-inventory",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-inventory-api",,1,0
+" -- magento/module-inventory-catalog-api",,1,0
+" -- magento/module-inventory-configuration-api",,1,0
+" -- magento/module-inventory-reservations-api",,1,0
+" -- magento/module-inventory-sales-api",,1,0
+" -- magento/module-inventory-source-deduction-api",,1,0
+" -- magento/module-sales-inventory",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-inventory-catalog",,0,1
+
+magento/module-inventory-indexer,7,6,1
+" -- magento/module-inventory-multi-dimensional-indexer-api",,1,0
+" -- magento/module-inventory",,1,0
+" -- magento/module-inventory-api",,1,0
+" -- magento/module-inventory-catalog-api",,1,0
+" -- magento/module-inventory-sales-api",,1,0
+" -- magento/module-inventory-sales",,1,0
+" -- magento/module-catalog",,0,1
+
+magento/module-catalog-import-export,9,9,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-inventory",,1,0
+" -- magento/module-catalog-url-rewrite",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-import-export",,1,0
+" -- magento/module-media-storage",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-tax",,1,0
+
+magento/module-catalog-search,12,11,1
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-indexer",,1,0
+" -- magento/module-catalog-inventory",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-search",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-theme",,1,0
+" -- magento/module-ui",,1,0
+" -- magento/module-config",,0,1
+
+magento/module-catalog-rule,9,7,2
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-rule",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-ui",,1,0
+" -- magento/module-import-export",,0,1
+" -- magento/module-catalog-rule-sample-data",,0,1
+
+magento/module-instant-purchase,7,7,0
+" -- magento/module-store",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-shipping",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-vault",,1,0
+
+magento/module-msrp,8,6,2
+" -- magento/module-catalog",,1,0
+" -- magento/module-downloadable",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-grouped-product",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-tax",,1,0
+" -- magento/module-bundle",,0,1
+" -- magento/module-msrp-sample-data",,0,1
+
+magento/module-configurable-product,17,10,7
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-inventory",,1,0
+" -- magento/module-checkout",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-media-storage",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-ui",,1,0
+" -- magento/module-msrp",,0,1
+" -- magento/module-webapi",,0,1
+" -- magento/module-sales",,0,1
+" -- magento/module-sales-rule",,0,1
+" -- magento/module-product-video",,0,1
+" -- magento/module-configurable-sample-data",,0,1
+" -- magento/module-product-links-sample-data",,0,1
+
+magento/module-paypal,17,16,1
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-checkout",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-instant-purchase",,1,0
+" -- magento/module-payment",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-tax",,1,0
+" -- magento/module-theme",,1,0
+" -- magento/module-ui",,1,0
+" -- magento/module-vault",,1,0
+" -- magento/module-checkout-agreements",,0,1
+
+magento/module-developer,2,2,0
+" -- magento/module-config",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-catalog-url-rewrite,8,8,0
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-import-export",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-import-export",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-ui",,1,0
+" -- magento/module-url-rewrite",,1,0
+
+magento/module-grouped-product,13,12,1
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-inventory",,1,0
+" -- magento/module-checkout",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-media-storage",,1,0
+" -- magento/module-msrp",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-ui",,1,0
+" -- magento/module-grouped-product-sample-data",,0,1
+
+magento/module-search,5,5,0
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog-search",,1,0
+" -- magento/module-reports",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-ui",,1,0
+
+magento/module-sales-rule,17,16,1
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-rule",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-payment",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-reports",,1,0
+" -- magento/module-rule",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-shipping",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-ui",,1,0
+" -- magento/module-widget",,1,0
+" -- magento/module-sales-rule-sample-data",,0,1
+
+magento/module-asynchronous-operations,5,3,2
+" -- magento/module-authorization",,1,0
+" -- magento/module-backend",,1,0
+" -- magento/module-ui",,1,0
+" -- magento/module-admin-notification",,0,1
+" -- magento/module-logging",,0,1
+
+amzn/amazon-pay-and-login-with-amazon-core-module,11,11,0
+" -- magento/module-sales",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-developer",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-checkout",,1,0
+" -- magento/module-backend",,1,0
+" -- magento/module-payment",,1,0
+" -- magento/module-paypal",,1,0
+
+klarna/module-core,10,10,0
+" -- magento/module-bundle",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-payment",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-tax",,1,0
+
+magento/module-url-rewrite,6,6,0
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-url-rewrite",,1,0
+" -- magento/module-cms",,1,0
+" -- magento/module-cms-url-rewrite",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-cron,2,1,1
+" -- magento/module-store",,1,0
+" -- magento/module-config",,0,1
+
+magento/module-eav-graph-ql,2,1,1
+" -- magento/module-eav",,1,0
+" -- magento/module-graph-ql",,0,1
+
+magento/module-inventory-catalog-admin-ui,10,9,1
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-inventory",,1,0
+" -- magento/module-backend",,1,0
+" -- magento/module-inventory-api",,1,0
+" -- magento/module-ui",,1,0
+" -- magento/module-inventory-catalog-api",,1,0
+" -- magento/module-inventory-configuration-api",,1,0
+" -- magento/module-inventory-indexer",,1,0
+" -- magento/module-asynchronous-operations",,1,0
+" -- magento/module-inventory-admin-ui",,0,1
+
+magento/module-catalog-graph-ql,8,6,2
+" -- magento/module-eav",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-inventory",,1,0
+" -- magento/module-search",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-eav-graph-ql",,1,0
+" -- magento/module-graph-ql",,0,1
+" -- magento/module-store-graph-ql",,0,1
+
+magento/module-checkout-agreements,4,4,0
+" -- magento/module-backend",,1,0
+" -- magento/module-checkout",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-product-alert,5,4,1
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-config",,0,1
+
+magento/module-catalog-sample-data,1,1,0
+" -- magento/module-sample-data",,1,0
+
+magento/module-security,4,3,1
+" -- magento/module-backend",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-user",,1,0
+" -- magento/module-customer",,0,1
+
+amzn/login-with-amazon-module,6,5,1
+" -- magento/module-customer",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-checkout",,1,0
+" -- magento/module-checkout-agreements",,1,0
+" -- magento/module-sales",,0,1
+
+klarna/module-ordermanagement,5,5,0
+" -- klarna/module-core",,1,0
+" -- magento/module-payment",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-cookie,2,1,1
+" -- magento/module-store",,1,0
+" -- magento/module-backend",,0,1
+
+magento/module-inventory-admin-ui,4,4,0
+" -- magento/module-inventory-api",,1,0
+" -- magento/module-backend",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-ui",,1,0
+
+magento/module-inventory-configuration,5,5,0
+" -- magento/module-catalog-inventory",,1,0
+" -- magento/module-inventory-api",,1,0
+" -- magento/module-inventory-catalog-api",,1,0
+" -- magento/module-inventory-configuration-api",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-inventory-low-quantity-notification,9,9,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-catalog-inventory",,1,0
+" -- magento/module-inventory",,1,0
+" -- magento/module-inventory-api",,1,0
+" -- magento/module-inventory-catalog-api",,1,0
+" -- magento/module-inventory-configuration-api",,1,0
+" -- magento/module-inventory-low-quantity-notification-api",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-offline-shipping,11,9,2
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-sales-rule",,1,0
+" -- magento/module-shipping",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-checkout",,0,1
+" -- magento/module-offline-shipping-sample-data",,0,1
+
+magento/module-webapi,6,4,2
+" -- magento/module-authorization",,1,0
+" -- magento/module-backend",,1,0
+" -- magento/module-integration",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-user",,0,1
+" -- magento/module-customer",,0,1
+
+magento/module-gift-message,9,8,1
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-checkout",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-ui",,1,0
+" -- magento/module-multishipping",,0,1
+
+magento/module-swatches,11,9,2
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-configurable-product",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-media-storage",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-theme",,1,0
+" -- magento/module-layered-navigation",,0,1
+" -- magento/module-swatches-sample-data",,0,1
+
+magento/module-usps,8,8,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-inventory",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-shipping",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-advanced-search,7,7,0
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-search",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-search",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-google-analytics,4,3,1
+" -- magento/module-cookie",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-config",,0,1
+
+magento/module-multishipping,9,9,0
+" -- magento/module-checkout",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-payment",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-tax",,1,0
+" -- magento/module-theme",,1,0
+
+magento/module-robots,2,1,1
+" -- magento/module-store",,1,0
+" -- magento/module-theme",,0,1
+
+magento/module-send-friend,3,3,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-url-rewrite-graph-ql,3,2,1
+" -- magento/module-url-rewrite",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-graph-ql",,0,1
+
+amzn/amazon-pay-module,14,11,3
+" -- magento/module-customer",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-payment",,1,0
+" -- magento/module-backend",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-checkout",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-paypal",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-customer",,0,1
+" -- magento/module-scalable-checkout",,0,1
+" -- magento/module-scalable-oms",,0,1
+
+klarna/module-kp,9,9,0
+" -- klarna/module-core",,1,0
+" -- klarna/module-ordermanagement",,1,0
+" -- magento/module-checkout",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-payment",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-backup,3,3,0
+" -- magento/module-backend",,1,0
+" -- magento/module-cron",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-cms-url-rewrite,3,3,0
+" -- magento/module-cms",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-url-rewrite",,1,0
+
+magento/module-deploy,4,4,0
+" -- magento/module-config",,1,0
+" -- magento/module-require-js",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-user",,1,0
+
+magento/module-inventory-bundle-product,2,1,1
+" -- magento/module-bundle",,1,0
+" -- magento/module-inventory-configuration-api",,0,1
+
+magento/module-inventory-bundle-product-admin-ui,1,0,1
+" -- magento/module-inventory-configuration-api",,0,1
+
+magento/module-inventory-cache,3,2,1
+" -- magento/module-inventory-catalog-api",,1,0
+" -- magento/module-inventory-indexer",,1,0
+" -- magento/module-catalog",,0,1
+
+magento/module-inventory-catalog,11,10,1
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-inventory",,1,0
+" -- magento/module-inventory-api",,1,0
+" -- magento/module-inventory-catalog-api",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-inventory",,1,0
+" -- magento/module-inventory-configuration-api",,1,0
+" -- magento/module-inventory-indexer",,1,0
+" -- magento/module-inventory-sales-api",,1,0
+" -- magento/module-inventory-configuration",,1,0
+" -- magento/module-inventory-reservations-api",,0,1
+
+magento/module-inventory-catalog-search,4,3,1
+" -- magento/module-inventory-sales-api",,1,0
+" -- magento/module-inventory-indexer",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-catalog-search",,0,1
+
+magento/module-inventory-configurable-product,6,5,1
+" -- magento/module-catalog",,1,0
+" -- magento/module-inventory-sales-api",,1,0
+" -- magento/module-inventory-indexer",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-catalog-inventory",,1,0
+" -- magento/module-configurable-product",,0,1
+
+magento/module-inventory-configurable-product-admin-ui,6,6,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-configurable-product",,1,0
+" -- magento/module-ui",,1,0
+" -- magento/module-inventory-api",,1,0
+" -- magento/module-inventory-catalog-api",,1,0
+" -- magento/module-inventory-catalog-admin-ui",,1,0
+
+magento/module-inventory-configurable-product-indexer,6,5,1
+" -- magento/module-catalog",,1,0
+" -- magento/module-inventory-api",,1,0
+" -- magento/module-inventory-catalog-api",,1,0
+" -- magento/module-inventory-indexer",,1,0
+" -- magento/module-inventory-multi-dimensional-indexer-api",,1,0
+" -- magento/module-inventory",,0,1
+
+magento/module-inventory-grouped-product,2,1,1
+" -- magento/module-grouped-product",,1,0
+" -- magento/module-inventory-configuration-api",,0,1
+
+magento/module-inventory-grouped-product-admin-ui,7,6,1
+" -- magento/module-catalog",,1,0
+" -- magento/module-grouped-product",,1,0
+" -- magento/module-ui",,1,0
+" -- magento/module-inventory-api",,1,0
+" -- magento/module-inventory-catalog-api",,1,0
+" -- magento/module-inventory-catalog-admin-ui",,1,0
+" -- magento/module-inventory-configuration-api",,0,1
+
+magento/module-inventory-grouped-product-indexer,7,6,1
+" -- magento/module-catalog",,1,0
+" -- magento/module-inventory-api",,1,0
+" -- magento/module-inventory-catalog-api",,1,0
+" -- magento/module-inventory-indexer",,1,0
+" -- magento/module-inventory-multi-dimensional-indexer-api",,1,0
+" -- magento/module-grouped-product",,1,0
+" -- magento/module-inventory",,0,1
+
+magento/module-inventory-import-export,7,6,1
+" -- magento/module-eav",,1,0
+" -- magento/module-import-export",,1,0
+" -- magento/module-inventory-api",,1,0
+" -- magento/module-inventory",,1,0
+" -- magento/module-inventory-catalog-api",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-catalog-import-export",,0,1
+
+magento/module-inventory-low-quantity-notification-admin-ui,9,9,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-backend",,1,0
+" -- magento/module-reports",,1,0
+" -- magento/module-inventory-api",,1,0
+" -- magento/module-inventory-catalog-api",,1,0
+" -- magento/module-inventory-configuration-api",,1,0
+" -- magento/module-inventory-low-quantity-notification-api",,1,0
+" -- magento/module-inventory-low-quantity-notification",,1,0
+" -- magento/module-ui",,1,0
+
+magento/module-inventory-product-alert,7,6,1
+" -- magento/module-catalog",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-backend",,1,0
+" -- magento/module-product-alert",,1,0
+" -- magento/module-inventory-api",,1,0
+" -- magento/module-inventory-sales-api",,1,0
+" -- magento/module-product-alert",,0,1
+
+magento/module-inventory-reservations,1,1,0
+" -- magento/module-inventory-reservations-api",,1,0
+
+magento/module-inventory-sales-admin-ui,10,10,0
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog-inventory",,1,0
+" -- magento/module-inventory-admin-ui",,1,0
+" -- magento/module-inventory-api",,1,0
+" -- magento/module-inventory-catalog-api",,1,0
+" -- magento/module-inventory-sales-api",,1,0
+" -- magento/module-inventory-configuration-api",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-ui",,1,0
+
+magento/module-inventory-sales-frontend-ui,3,3,0
+" -- magento/module-catalog-inventory",,1,0
+" -- magento/module-inventory-sales-api",,1,0
+" -- magento/module-inventory-configuration-api",,1,0
+
+magento/module-inventory-shipping,8,8,0
+" -- magento/module-inventory-api",,1,0
+" -- magento/module-inventory-catalog-api",,1,0
+" -- magento/module-inventory-sales-api",,1,0
+" -- magento/module-inventory-source-selection-api",,1,0
+" -- magento/module-inventory-source-deduction-api",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-shipping",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-inventory-shipping-admin-ui,8,8,0
+" -- magento/module-backend",,1,0
+" -- magento/module-inventory-api",,1,0
+" -- magento/module-inventory-configuration-api",,1,0
+" -- magento/module-inventory-sales-api",,1,0
+" -- magento/module-inventory-source-selection-api",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-shipping",,1,0
+" -- magento/module-ui",,1,0
+
+magento/module-inventory-source-selection,2,2,0
+" -- magento/module-inventory-source-selection-api",,1,0
+" -- magento/module-inventory-api",,1,0
+
+magento/module-product-links-sample-data,2,2,0
+" -- magento/module-catalog-sample-data",,1,0
+" -- magento/module-sample-data",,1,0
+
+magento/module-translation,4,3,1
+" -- magento/module-backend",,1,0
+" -- magento/module-developer",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-deploy",,0,1
+
+vertex/module-tax,16,11,5
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-shipping",,1,0
+" -- magento/module-tax",,1,0
+" -- magento/module-gift-wrapping",,0,1
+" -- magento/module-gift-card-account",,0,1
+" -- magento/module-checkout",,0,1
+" -- magento/module-multishipping",,0,1
+" -- magento/module-reward",,0,1
+
+dotmailer/dotmailer-magento2-extension,25,25,0
+" -- magento/module-newsletter",,1,0
+" -- magento/module-review",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-sales-rule",,1,0
+" -- magento/module-wishlist",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-backend",,1,0
+" -- magento/module-checkout",,1,0
+" -- magento/module-ui",,1,0
+" -- magento/module-cron",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-rule",,1,0
+" -- magento/module-catalog-inventory",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-shipping",,1,0
+" -- magento/module-payment",,1,0
+" -- magento/module-user",,1,0
+" -- magento/module-reports",,1,0
+" -- magento/module-email",,1,0
+" -- magento/module-send-friend",,1,0
+" -- magento/module-product-alert",,1,0
+
+magento/module-admin-notification,4,4,0
+" -- magento/module-backend",,1,0
+" -- magento/module-media-storage",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-ui",,1,0
+
+magento/module-advanced-pricing-import-export,7,7,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-import-export",,1,0
+" -- magento/module-catalog-inventory",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-import-export",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-analytics,4,4,0
+" -- magento/module-backend",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-integration",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-authorizenet,8,7,1
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-checkout",,1,0
+" -- magento/module-payment",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-config",,0,1
+
+magento/module-braintree,15,13,2
+" -- magento/module-catalog",,1,0
+" -- magento/module-backend",,1,0
+" -- magento/module-checkout",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-instant-purchase",,1,0
+" -- magento/module-payment",,1,0
+" -- magento/module-paypal",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-ui",,1,0
+" -- magento/module-vault",,1,0
+" -- magento/module-checkout-agreements",,0,1
+" -- magento/module-theme",,0,1
+
+magento/module-bundle-graph-ql,4,4,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-bundle",,1,0
+" -- magento/module-catalog-graph-ql",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-bundle-import-export,6,6,0
+" -- magento/module-bundle",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-import-export",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-import-export",,1,0
+
+magento/module-cache-invalidate,1,1,0
+" -- magento/module-page-cache",,1,0
+
+magento/module-captcha,4,4,0
+" -- magento/module-backend",,1,0
+" -- magento/module-checkout",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-catalog-analytics,1,1,0
+" -- magento/module-catalog",,1,0
+
+magento/module-catalog-inventory-graph-ql,3,3,0
+" -- magento/module-store",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-inventory",,1,0
+
+magento/module-catalog-rule-configurable,4,3,1
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-rule",,1,0
+" -- magento/module-configurable-product",,1,0
+" -- magento/module-catalog-rule",,0,1
+
+magento/module-catalog-rule-sample-data,2,2,0
+" -- magento/module-catalog-rule",,1,0
+" -- magento/module-sample-data",,1,0
+
+magento/module-catalog-url-rewrite-graph-ql,3,0,3
+" -- magento/module-catalog-url-rewrite",,0,1
+" -- magento/module-catalog-graph-ql",,0,1
+" -- magento/module-url-rewrite-graph-ql",,0,1
+
+magento/module-catalog-widget,8,8,0
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-rule",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-widget",,1,0
+" -- magento/module-wishlist",,1,0
+
+magento/module-cms-graph-ql,2,2,0
+" -- magento/module-cms",,1,0
+" -- magento/module-widget",,1,0
+
+magento/module-cms-url-rewrite-graph-ql,5,3,2
+" -- magento/module-url-rewrite-graph-ql",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-cms",,1,0
+" -- magento/module-cms-url-rewrite",,0,1
+" -- magento/module-catalog-graph-ql",,0,1
+
+magento/module-configurable-import-export,5,5,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-import-export",,1,0
+" -- magento/module-configurable-product",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-import-export",,1,0
+
+magento/module-configurable-product-graph-ql,3,3,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-configurable-product",,1,0
+" -- magento/module-catalog-graph-ql",,1,0
+
+magento/module-configurable-product-sales,4,3,1
+" -- magento/module-catalog",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-configurable-product",,0,1
+
+magento/module-configurable-sample-data,3,3,0
+" -- magento/module-configurable-product",,1,0
+" -- magento/module-sample-data",,1,0
+" -- magento/module-product-links-sample-data",,1,0
+
+magento/module-currency-symbol,5,5,0
+" -- magento/module-backend",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-page-cache",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-customer-analytics,1,1,0
+" -- magento/module-customer",,1,0
+
+magento/module-customer-graph-ql,3,2,1
+" -- magento/module-customer",,1,0
+" -- magento/module-authorization",,1,0
+" -- magento/module-graph-ql",,0,1
+
+magento/module-customer-import-export,6,6,0
+" -- magento/module-backend",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-import-export",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-dhl,10,9,1
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-inventory",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-shipping",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-checkout",,0,1
+
+magento/module-downloadable-graph-ql,3,2,1
+" -- magento/module-catalog",,1,0
+" -- magento/module-downloadable",,1,0
+" -- magento/module-catalog-graph-ql",,0,1
+
+magento/module-downloadable-import-export,6,6,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-import-export",,1,0
+" -- magento/module-downloadable",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-import-export",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-elasticsearch,9,8,1
+" -- magento/module-advanced-search",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-search",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-search",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-catalog-inventory",,1,0
+" -- magento/module-config",,0,1
+
+magento/module-encryption-key,2,2,0
+" -- magento/module-backend",,1,0
+" -- magento/module-config",,1,0
+
+magento/module-fedex,8,8,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-inventory",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-shipping",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-google-adwords,2,2,0
+" -- magento/module-sales",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-google-optimizer,6,6,0
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-cms",,1,0
+" -- magento/module-google-analytics",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-ui",,1,0
+
+magento/module-graph-ql,4,3,1
+" -- magento/module-authorization",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-webapi",,0,1
+
+magento/module-grouped-import-export,5,5,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-import-export",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-grouped-product",,1,0
+" -- magento/module-import-export",,1,0
+
+magento/module-grouped-product-graph-ql,2,2,0
+" -- magento/module-grouped-product",,1,0
+" -- magento/module-catalog-graph-ql",,1,0
+
+magento/module-layered-navigation,2,2,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-config",,1,0
+
+magento/module-marketplace,1,1,0
+" -- magento/module-backend",,1,0
+
+magento/module-mysql-mq,1,1,0
+" -- magento/module-store",,1,0
+
+magento/module-new-relic-reporting,6,6,0
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-configurable-product",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-offline-payments,3,2,1
+" -- magento/module-checkout",,1,0
+" -- magento/module-payment",,1,0
+" -- magento/module-config",,0,1
+
+magento/module-persistent,6,6,0
+" -- magento/module-checkout",,1,0
+" -- magento/module-cron",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-page-cache",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-product-video,7,5,2
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-media-storage",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-customer",,0,1
+" -- magento/module-config",,0,1
+
+magento/module-quote-analytics,1,1,0
+" -- magento/module-quote",,1,0
+
+magento/module-quote-graph-ql,4,2,2
+" -- magento/module-authorization",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-graph-ql",,0,1
+" -- magento/module-catalog-graph-ql",,0,1
+
+magento/module-release-notification,4,3,1
+" -- magento/module-user",,1,0
+" -- magento/module-backend",,1,0
+" -- magento/module-ui",,1,0
+" -- magento/module-config",,0,1
+
+magento/module-review-analytics,1,1,0
+" -- magento/module-review",,1,0
+
+magento/module-sales-analytics,1,1,0
+" -- magento/module-sales",,1,0
+
+magento/module-signifyd,9,8,1
+" -- magento/module-backend",,1,0
+" -- magento/module-checkout",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-payment",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-config",,0,1
+
+magento/module-sitemap,10,9,1
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-url-rewrite",,1,0
+" -- magento/module-cms",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-media-storage",,1,0
+" -- magento/module-robots",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-config",,0,1
+
+magento/module-store-graph-ql,3,1,2
+" -- magento/module-store",,1,0
+" -- magento/module-graph-ql",,0,1
+" -- magento/module-catalog-graph-ql",,0,1
+
+magento/module-swagger-webapi,1,1,0
+" -- magento/module-swagger",,1,0
+
+magento/module-swagger-webapi-async,2,1,1
+" -- magento/module-swagger",,1,0
+" -- magento/module-config",,0,1
+
+magento/module-swatches-graph-ql,3,2,1
+" -- magento/module-swatches",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-catalog-graph-ql",,0,1
+
+magento/module-tax-graph-ql,2,0,2
+" -- magento/module-tax",,0,1
+" -- magento/module-catalog-graph-ql",,0,1
+
+magento/module-tax-import-export,4,4,0
+" -- magento/module-backend",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-tax",,1,0
+
+magento/module-theme-sample-data,2,2,0
+" -- magento/module-theme",,1,0
+" -- magento/module-sample-data",,1,0
+
+magento/module-tinymce-3,5,4,1
+" -- magento/module-backend",,1,0
+" -- magento/module-ui",,1,0
+" -- magento/module-variable",,1,0
+" -- magento/module-widget",,1,0
+" -- magento/module-cms",,0,1
+
+magento/module-ups,8,7,1
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog-inventory",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-shipping",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-config",,0,1
+
+magento/module-webapi-async,4,2,2
+" -- magento/module-webapi",,1,0
+" -- magento/module-asynchronous-operations",,1,0
+" -- magento/module-user",,0,1
+" -- magento/module-customer",,0,1
+
+magento/module-webapi-security,1,1,0
+" -- magento/module-webapi",,1,0
+
+magento/module-weee,13,12,1
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-checkout",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-page-cache",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-tax",,1,0
+" -- magento/module-ui",,1,0
+" -- magento/module-bundle",,0,1
+
+magento/module-weee-graph-ql,2,0,2
+" -- magento/module-weee",,0,1
+" -- magento/module-catalog-graph-ql",,0,1
+
+magento/module-wishlist-analytics,1,1,0
+" -- magento/module-wishlist",,1,0
+
+temando/module-shipping-m2,21,18,3
+" -- magento/module-backend",,1,0
+" -- magento/module-catalog",,1,0
+" -- magento/module-checkout",,1,0
+" -- magento/module-config",,1,0
+" -- magento/module-customer",,1,0
+" -- magento/module-directory",,1,0
+" -- magento/module-eav",,1,0
+" -- magento/module-email",,1,0
+" -- magento/module-integration",,1,0
+" -- magento/module-multishipping",,1,0
+" -- magento/module-payment",,1,0
+" -- magento/module-quote",,1,0
+" -- magento/module-sales",,1,0
+" -- magento/module-security",,1,0
+" -- magento/module-shipping",,1,0
+" -- magento/module-store",,1,0
+" -- magento/module-tax",,1,0
+" -- magento/module-ui",,1,0
+" -- magento/module-rma",,0,1
+" -- magento/module-scalable-checkout",,0,1
+" -- magento/module-scalable-oms",,0,1
+
+magento/module-bundle-sample-data,4,4,0
+" -- magento/module-bundle",,1,0
+" -- magento/module-sample-data",,1,0
+" -- magento/module-catalog-sample-data",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-cms-sample-data,3,3,0
+" -- magento/module-cms",,1,0
+" -- magento/module-sample-data",,1,0
+" -- magento/module-theme-sample-data",,1,0
+
+magento/module-customer-sample-data,1,1,0
+" -- magento/module-sample-data",,1,0
+
+magento/module-downloadable-sample-data,4,4,0
+" -- magento/module-sample-data",,1,0
+" -- magento/module-catalog-sample-data",,1,0
+" -- magento/module-downloadable",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-grouped-product-sample-data,4,4,0
+" -- magento/module-sample-data",,1,0
+" -- magento/module-catalog-sample-data",,1,0
+" -- magento/module-grouped-product",,1,0
+" -- magento/module-store",,1,0
+
+magento/module-msrp-sample-data,2,2,0
+" -- magento/module-sample-data",,1,0
+" -- magento/module-msrp",,1,0
+
+magento/module-offline-shipping-sample-data,3,3,0
+" -- magento/module-sample-data",,1,0
+" -- magento/module-offline-shipping",,1,0
+" -- magento/module-directory",,1,0
+
+magento/module-review-sample-data,2,2,0
+" -- magento/module-sample-data",,1,0
+" -- magento/module-review",,1,0
+
+magento/module-sales-rule-sample-data,4,4,0
+" -- magento/module-sample-data",,1,0
+" -- magento/module-catalog-rule-sample-data",,1,0
+" -- magento/module-sales-rule",,1,0
+" -- magento/module-eav",,1,0
+
+magento/module-sales-sample-data,3,3,0
+" -- magento/module-sales",,1,0
+" -- magento/module-sample-data",,1,0
+" -- magento/module-configurable-sample-data",,1,0
+
+magento/module-swatches-sample-data,3,3,0
+" -- magento/module-swatches",,1,0
+" -- magento/module-sample-data",,1,0
+" -- magento/module-eav",,1,0
+
+magento/module-tax-sample-data,2,2,0
+" -- magento/module-tax",,1,0
+" -- magento/module-sample-data",,1,0
+
+magento/module-widget-sample-data,4,4,0
+" -- magento/module-widget",,1,0
+" -- magento/module-sample-data",,1,0
+" -- magento/module-theme",,1,0
+" -- magento/module-cms",,1,0
+
+magento/module-wishlist-sample-data,2,2,0
+" -- magento/module-wishlist",,1,0
+" -- magento/module-sample-data",,1,0
+
+mageplaza/module-smtp,1,1,0
+" -- mageplaza/module-core",,1,0
+
+mageplaza/module-better-popup,1,1,0
+" -- mageplaza/module-core",,1,0
+
+mageplaza/module-webhook,1,1,0
+" -- mageplaza/module-core",,1,0
+
+mageplaza/module-login-as-customer,1,1,0
+" -- mageplaza/module-core",,1,0
+
+mageplaza/magento-2-social-login,4,4,0
+" -- mageplaza/module-core",,1,0
+" -- mageplaza/module-smtp",,1,0
+" -- mageplaza/module-google-recaptcha",,1,0
+" -- mageplaza/module-reports",,1,0
+
+mageplaza/module-google-recaptcha,1,1,0
+" -- mageplaza/module-core",,1,0
+
+mageplaza/module-gdpr,1,1,0
+" -- mageplaza/module-core",,1,0
+
+mageplaza/magento-2-blog-extension,1,1,0
+" -- mageplaza/module-core",,1,0
+
+mageplaza/module-instagram-feed,1,1,0
+" -- mageplaza/module-core",,1,0
+
+mageplaza/module-banner-slider,1,1,0
+" -- mageplaza/module-core",,1,0
+
+mageplaza/module-delete-orders,1,1,0
+" -- mageplaza/module-core",,1,0
+
+mageplaza/magento-2-product-slider,1,1,0
+" -- mageplaza/module-core",,1,0
+
+mageplaza/module-ajax-layered-navigation,1,1,0
+" -- mageplaza/module-core",,1,0

@@ -1,0 +1,30 @@
+<?php
+/**
+ * Instagram template for separate item
+ *
+ */
+
+/**
+ * @var $this Excellence\Instagram\Block\View
+ * @see Excellence\Instagram\Block\View
+ */
+?>
+<?php $_instagramItem = $this->getInstagram(); ?>
+    <div class="instagram_item_subtitle">
+        <?php echo $this->formatDate($_instagramItem->getPublishedAt()) ?> |
+        <?php echo $this->escapeHtml($_instagramItem->getAuthor()) ?>
+    </div>
+
+<div class="instagram_item_view">
+    <?php if ($imageUrl = $this->getImageUrl($_instagramItem, 400)): ?>
+       <p><img src="<?php echo $imageUrl ?>" alt="<?php echo $this->escapeHtml($_instagramItem->getTitle()) ?>" /></p>
+    <?php endif; ?>
+
+    <div class="instagram_item_content"><?php echo $_instagramItem->getContent() ?></div>
+
+    <div class="pager">
+        <a href="<?php echo $this->getBackUrl() ?>">
+            <?php echo __('Return to list') ?>
+        </a>
+    </div>
+</div>

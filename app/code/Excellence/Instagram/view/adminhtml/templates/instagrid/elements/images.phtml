@@ -1,0 +1,124 @@
+<?php
+
+$data = $block->getUserConfigs();
+
+$tagEdit = 0;
+$jsonEdit =0;
+$productIdEdit = 0;
+$id = $block->getParameter();
+if($id){
+    $dataEdit = $block->getInstaCollection();
+
+    foreach ($dataEdit as $val) {
+        $instagramId = $val->getInstagramId();
+        $productId = $val->getProductId();
+        $imageUrl = $val->getImageUrl();
+        $instatag = $val->getInstaTag();
+
+        if($id==$instagramId){
+            $productIdEdit = $productId;
+            $jsonEdit = $imageUrl;
+            $tagEdit = $instatag;
+            $imagesEditData = json_decode($jsonEdit, TRUE);
+        }
+    }
+}else{ $id = 0; }
+
+?>
+
+<div class="mainDiv">
+    <a class="searchImg"><?php echo __("Search"); ?></a>
+    <input id="searchBox" type="textbox" name="searchImage" />
+</div>
+
+<?php
+$imageDetails = array();
+for ($i=0; $i < count($data['data']) ; $i++) { 
+  $instaImageId = $data['data'][$i]['id'];
+  $thumbnailimg = $data['data'][$i]['images']['thumbnail']['url'];
+  $tag = $data['data'][$i]['caption']['text'];
+  $imageDetails[$i]['instaImageId']=$instaImageId;
+  $imageDetails[$i]['thmbimg']=$thumbnailimg;
+  $imageDetails[$i]['tag']=$tag;
+}
+?>
+<div class="imagesShow">
+</div>
+<div class="hiddenImg">
+</div>
+
+<script type="text/javascript">
+    window.prodcutEditId = <?php echo $productIdEdit ?>;
+    window.id = <?php echo $id ?>;
+    window.tagEdit = '<?php echo $tagEdit ?>';
+    window.instaData = <?php /* @escapeNotVerified */ echo \Zend_Json::encode($imageDetails);?>;
+    window.imageEdit = <?php /* @escapeNotVerified */ echo \Zend_Json::encode($jsonEdit);?>;
+    var json = window.instaData;
+    require([
+        'jquery',
+        'prototype'
+        ], function(jQuery) {
+            jQuery(".searchImg").on('click', function() {
+                var textVal = jQuery("#searchBox").val();
+                hiddenHtml = "<input type='hidden' name='instaTag' value=" + textVal + ">";
+                jQuery(".hiddenImg").html(hiddenHtml);
+                var contentHtml = "";
+                jQuery.each(json, function(i, v) {
+                    var str = v.tag;
+                    if (str != null) {
+                        if (str.match(textVal)) {
+                            contentHtml += "<img class='imageSelect' src=" + v.thmbimg + ">" + "<input class='checkboxImage' name='instaImgUrl[]' type='checkbox' value=" + v.thmbimg + ">";
+                        }
+                    }
+                    if(textVal){
+                      jQuery(".imagesShow").html(contentHtml);
+                  }                
+              });
+                jQuery(".imageSelect").on('click', function() {
+                    jQuery('.checkboxImage').prop('checked', true);
+                });
+            });
+
+            var contentHtml = '';
+            if (window.id && window.id != 0) {
+                hiddenHtml = "<input type='hidden' name='instaTag' value=" + window.tagEdit + ">";
+                jQuery(".hiddenImg").html(hiddenHtml);
+                var contentHtml = "";
+                jQuery.each(json, function(i, v) {
+                    var str = v.tag;
+                    if (str != null) {
+                        if (str.match(window.tagEdit)) {
+                            contentHtml += "<div class='img_Container'><img class='imageSelect' src=" + v.thmbimg + ">" + "<input class='checkboxImage' name='instaImgUrl[]' type='checkbox' value=" + v.thmbimg + "></div>";
+                        }
+                    }
+                    jQuery(".imagesShow").html(contentHtml);
+                    jQuery("#searchBox").val(window.tagEdit);
+                });
+                var parsed = JSON.parse(window.imageEdit);
+                var arr = [];
+                for (var jsonParse in parsed) {
+                    jQuery.each(json, function(i, v) {
+                        if (v.thmbimg == parsed[jsonParse]) {
+                            jQuery('.checkboxImage').each(function() {
+                                if (jQuery(this).val() == parsed[jsonParse]) {
+                                    jQuery(this).prop('checked', true);
+                                }
+                            });
+                        }
+                    });
+                }
+            }
+
+
+            jQuery(document).ajaxSuccess(function() {
+                jQuery(this).delay(300).queue(function() {
+                    jQuery("input[name='products_id']").each(function() {
+                        if (jQuery(this).val() == window.prodcutEditId) {
+                            jQuery(this).prop('checked', true);
+                        }
+                    });
+                });
+            });
+
+        });
+    </script>

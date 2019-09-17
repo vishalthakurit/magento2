@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+     <update handle="editor"/>
+    <body>
+	   <referenceContainer name="content">
+            <block class="Voice\Notification\Block\Adminhtml\Voice\Edit" name="notification_voice_edit"/>
+        </referenceContainer>
+		 <referenceContainer name="left">
+            <block class="Voice\Notification\Block\Adminhtml\Voice\Edit\Tabs" name="notification_voice_edit_tabs">
+				<block class="Voice\Notification\Block\Adminhtml\Voice\Edit\Tab\BasicInformation" name="notification_voice_edit_tab_basicinformation"/>
+				 <action method="addTab">
+                    <argument name="name" xsi:type="string">basicinformation_section</argument>
+                    <argument name="block" xsi:type="string">notification_voice_edit_tab_basicinformation</argument>
+                </action>
+				<block class="Voice\Notification\Block\Adminhtml\Voice\Edit\Tab\VoiceInfromation" name="notification_voice_edit_tab_voiceinfromation"/>
+				 <action method="addTab">
+                    <argument name="name" xsi:type="string">voiceinfromation_section</argument>
+                    <argument name="block" xsi:type="string">notification_voice_edit_tab_voiceinfromation</argument>
+                </action>
+				<!--CedAddTab-->
+			</block>
+        </referenceContainer>
+    </body>
+</page>

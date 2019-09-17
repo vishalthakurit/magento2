@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * BSS Commerce Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://bsscommerce.com/Bss-Commerce-License.txt
+ *
+ * @category   BSS
+ * @package    Bss_RefundRequest
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2017-2018 Bss Commerce Co. ( http://bsscommerce.com )
+ * @license    http://bsscommerce.com/Bss-Commerce-License.txt
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="bss_refundrequest_bss_refundrequest_email_config_email_template" label="Notify Email Template" file="bss_admin_refund_request_email.html" type="html" module="Bss_RefundRequest" area="frontend"/>
+    <template id="bss_refundrequest_bss_refundrequest_email_config_accept_email" label="Accept Email Template" file="accept_email.html" type="html" module="Bss_RefundRequest" area="frontend"/>
+    <template id="bss_refundrequest_bss_refundrequest_email_config_reject_email" label="Reject Email Template" file="reject_email.html" type="html" module="Bss_RefundRequest" area="frontend"/>
+</config>

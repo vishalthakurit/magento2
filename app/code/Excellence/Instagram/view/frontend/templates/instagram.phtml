@@ -1,0 +1,16 @@
+<script type="text/javascript">
+    require([
+        'jquery',
+        'prototype'
+        ], function($){
+        $( document ).ready(function() {
+            console.log("Working!!!!");
+            var redirectUrl = location.href;
+            var positon = redirectUrl.indexOf("=");
+            var tokenValue = redirectUrl.substring(positon+1, redirectUrl.length);
+            window.opener.document.getElementById('instagramSection_setting_access_Token').value = tokenValue;
+            setTimeout(function () { window.close();}, 3000);
+        });
+
+     });
+ </script>

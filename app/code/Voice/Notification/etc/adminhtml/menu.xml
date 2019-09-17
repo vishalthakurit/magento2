@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Voice. All rights reserved.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Backend/etc/menu.xsd">
+    <menu>
+        <add id="Voice_Notification::voice_voice_index" title="Voice information" module="Voice_Notification"  sortOrder="20" dependsOnModule="Voice_Notification" action="notification/voice/index" resource="Voice_Notification::voice_voice_index"/>
+<!--AddMenu-->
+    </menu>
+</config>

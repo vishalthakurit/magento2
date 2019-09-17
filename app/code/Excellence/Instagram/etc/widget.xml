@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="Instagram_Image_Slider" class="Excellence\Instagram\Block\Widget\ImageSlider">
+        <label translate="true">Instagram Image Slider</label>
+        <description>Image Slider Putting On Frontend</description>
+        <parameters>
+            <parameter name="autoplay" xsi:type="select" source_model="Excellence\Instagram\Model\Config\Source\AutoPlay" visible="true" sort_order="10" >
+                <label translate="true">Auto Play</label>
+            </parameter>
+
+            <parameter name="timeout" xsi:type="text" visible="true" sort_order="10" >
+                <label translate="true">Auto Play Time Interval</label>
+            </parameter>
+
+            <parameter name="displayimage" xsi:type="text" visible="true" sort_order="10" >
+                <label translate="true">Number Of Display Image On Frontend</label>
+            </parameter>
+
+            <parameter name="recentimageno" xsi:type="text" visible="true" sort_order="10" >
+                <label translate="true">Number Of Display Recent Image On Frontend</label>
+            </parameter>
+
+            <parameter name="category" xsi:type="select" source_model="Excellence\Instagram\Model\Config\Source\ListOption" visible="true" sort_order="10" >
+                <label translate="true">Select To Be Display on Frontend</label>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

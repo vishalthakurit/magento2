@@ -1,0 +1,82 @@
+<?php foreach ($block->getChildHtmlList() as $_html): ?>
+  <?php /* @escapeNotVerified */ echo $_html ?>
+<?php endforeach; ?>
+
+<?php 
+$object = \Magento\Framework\App\ObjectManager::getInstance();
+$moduleStatus = $object->get('Magento\Framework\App\Config\ScopeConfigInterface') ->getValue('instagramSection/setting/active');
+?>
+<!-- coding for slider on Product Page -->
+  
+<div class="owl-carousel">
+  <?php
+  $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+  $product = $objectManager->get('Magento\Framework\Registry')->registry('current_product');
+  $currentProductId = $product->getId();
+  $instaProduct = $objectManager->create('Excellence\Instagram\Model\Instagram')->getCollection();
+  $data = $instaProduct->getData();?>
+
+
+  <?php for($i=0;$i<count($data);$i++){
+    $prId = $data[$i]['product_id'];          
+    if($prId == $currentProductId){
+      $jsonData = $data[$i]['image_url'];
+      $arrayData = json_decode($jsonData, TRUE); 
+      for ($j=0; $j <count($arrayData); $j++)  { ?>
+      <div><img alt="Owl Image" src= <?php echo $arrayData[$j];  ?> /></div>
+      <?php }
+    }
+  }
+
+  ?>
+
+</div>
+<script type="text/javascript">
+
+  require([
+    'jquery',
+    'prototype'
+    ], function(jQuery){
+     jQuery(document).ready(function(){
+      jQuery(".owl-carousel").owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        responsive:{
+          0:{
+            items:1
+          },
+          600:{
+            items:3
+          },
+          1000:{
+            items:5
+          }
+        }
+      });
+    });
+     var owl = jQuery('.owl-carousel');
+     owl.on('mousewheel', '.owl-stage', function (e) {
+      if (e.deltaY>0) {
+        owl.trigger('next.owl');
+      } else {
+        owl.trigger('prev.owl');
+      }
+      e.preventDefault();
+    });
+      owl.owlCarousel({
+        items:4,
+        loop:true,
+        margin:10,
+        autoplay:true,
+        autoplayTimeout:1000,
+        autoplayHoverPause:true
+      });
+       
+       var that = this;
+      setTimeout(function() {
+         owl.trigger('play.owl.autoplay',[1000]);
+      }, 10000);
+    });
+</script>
+

@@ -1,0 +1,63 @@
+<?php
+
+$data = $block->getRecentPost();
+$collection = $block->getInstaCollection();
+
+$imgUrl = $data['data'][0]['images']['thumbnail']['url'];
+
+$tagEdit = 0;
+$jsonEdit =0;
+$productIdEdit = 0;
+
+$id = $block->getParameter();
+if($id){
+    $dataEdit = $block->getInstaCollection();
+
+    foreach ($dataEdit as $val) {
+        $instagramId = $val->getInstagramId();
+        $productId = $val->getProductId();
+        $imageUrl = $val->getImageUrl();
+        $instatag = $val->getInstaTag();
+
+        if($id==$instagramId){
+            $productIdEdit = $productId;
+            $jsonEdit = $imageUrl;
+            $tagEdit = $instatag;
+            $imagesEditData = json_decode($jsonEdit, TRUE);
+        }
+    }
+}else{ $id = 0; }
+?>
+
+<h2><?php echo __("Recent Post"); ?></h2>
+<img src="<?php echo $imgUrl; ?>">
+<div class="mainDiv">
+	<input type="text" id="searchBox" placeholder="<?php echo __("Enter image name with # tag..."); ?>" data-validate="{required:true}">
+	<button type="button" class="searchImg action primary"><?php echo __("Search Image"); ?></button>
+</div>
+
+<?php
+$imageDetails = array();
+for ($i=0; $i < count($data['data']) ; $i++) { 
+	$instaImageId = $data['data'][$i]['id'];
+	$thumbnailimg = $data['data'][$i]['images']['thumbnail']['url'];
+	$tag = $data['data'][$i]['caption']['text'];
+	$imageDetails[$i]['instaImageId']=$instaImageId;
+	$imageDetails[$i]['thmbimg']=$thumbnailimg;
+	$imageDetails[$i]['tag']=$tag;
+}
+?>
+<h2><?php echo __("Hash Tag Posts Are Here -"); ?></h2>
+<div class="imagesShow"></div>
+<div class="hiddenImg"></div>
+
+<script type="text/javascript">
+	window.prodcutEditId = <?php echo $productIdEdit ?>;
+	window.id = <?php echo $id ?>;
+	window.tagEdit = '<?php echo $tagEdit ?>';
+	window.instaData = <?php /* @escapeNotVerified */ echo \Zend_Json::encode($imageDetails);?>;
+	window.imageEdit = <?php /* @escapeNotVerified */ echo \Zend_Json::encode($jsonEdit);?>;
+	var json = window.instaData;
+</script>
+		
+	

@@ -1,0 +1,223 @@
+<?php 
+$sliderId = $block['collection_slider'];
+$sliderStretchImages = $block->getSliderStretchInfo($sliderId);
+
+foreach ($sliderStretchImages as $sliderStretchImage) {
+   $stretchImageVal = $sliderStretchImage->getStretchImage();
+}
+$sliderCollections = $block->getSliderDetails($sliderId);
+
+$sliderInfo = $block->getSliderType();
+
+$sliderType = $sliderInfo['sliderType'];
+$sliderSpeedVal = $sliderInfo['sliderSpeed'];
+$sliderFadeVal = $sliderInfo['fade'];
+$sliderPauseHover = $sliderInfo['pauseonhover'];
+$sliderLoopThrough = $sliderInfo['loop'];
+$sliderNavDots = $sliderInfo['dots'];
+$countImages = $sliderInfo['imagecounts'];
+$autoPlay = $sliderInfo['autoplay'];
+
+?>
+<!-- for Bxslider... -->
+<?php
+function sliderSpeedInfo($sliderSpeedVal){
+    if($sliderSpeedVal > 1000)
+    {
+        echo $sliderSpeedVal;
+    }else{
+        echo 500;
+    }
+} 
+ ?>
+<?php 
+function sliderFade($sliderFadeVal){
+    if($sliderFadeVal == 1)
+    {
+        echo 'fade';
+    }else{
+        echo 'horizontal';
+    }
+}
+?>
+<!-- Bxslider functions ends here.. -->
+<!-- FlexSlider functions... -->
+<?php 
+function pauseonHover($sliderPauseHover){
+    if($sliderPauseHover == 1)
+    {
+        echo "true";
+    }else{
+        echo "false";
+    }
+}
+?>
+<!-- flexslider functions ends here.. -->
+<!-- owl carousel slider -->
+<?php 
+function getLoopVal($sliderLoopThrough)
+{
+    if($sliderLoopThrough == 1){
+        echo "true";
+    }else{
+        echo "false";
+    }
+}
+function getDotStatus($sliderNavDots){
+    if($sliderNavDots == 1){
+        echo "true";
+    }else{
+        echo "false";
+    }
+}
+?>
+<!-- unslider function -->
+<?php 
+function autoPlay($autoPlay){
+    if($autoPlay == 1){
+        echo "true";
+    }else{
+        echo "false";
+    }
+}
+?>
+<?php
+if(!empty($sliderCollections))
+{
+	switch ($sliderType) {
+        case 'bxslider':
+        	?>
+            <script type="text/javascript">
+                requirejs(['jquery','bxslider'],function($,bx){
+                    $('.bxslider').bxSlider({
+                        captions: true,
+                        auto: true,
+                        speed:<?php sliderSpeedInfo($sliderSpeedVal); ?>,
+                        mode: '<?php sliderFade($sliderFadeVal);?>',
+                        adaptiveHeight: true,
+                        pagerCustom: '#bx-pager'
+                    });
+                });
+            </script>
+            <div>
+                <ul class="bxslider">
+                    <?php foreach ($sliderCollections as $sliderCollection):?>  
+                        <li class="bxslider_container"> 
+                            <a target="blank" href="<?php if(empty($sliderCollection->getContent())){ echo "javascript:void(0)"; 
+                                } else { echo $sliderCollection->getContent(); } ?>">
+                                <?php if($stretchImageVal == 1): ?><img style="width: 100%" src="<?php echo $sliderCollection->getFilename(); ?>" 
+                                alt="<?php echo $sliderCollection->getTitle(); ?>"title="<?php echo $sliderCollection->getTitle(); ?>" 
+                                 /> <?php else:?> <img src="<?php echo $sliderCollection->getFilename(); ?>" 
+                                alt="<?php echo $sliderCollection->getTitle(); ?>"title="<?php echo $sliderCollection->getTitle(); ?>" 
+                                class= "slider-image" /> <?php endif; ?>
+                            </a>
+                            <?php if(!empty($sliderCollection->getTitle())):?>
+                                <p class="image-caption"><?php echo $sliderCollection->getTitle(); ?></p>
+                            <?php endif;?>
+                        </li>
+                    <?php endforeach;?>
+                </ul>
+            </div>
+            <?php
+            break;
+
+        case 'flexslider':
+            ?>
+            <script type="text/javascript">
+                requirejs(['jquery','flexslider'],function($,flex){
+                    $('.flexslider').flexslider({
+                        pauseOnHover:'<?php pauseonHover($sliderPauseHover); ?>',
+                        slideshowSpeed: <?php sliderSpeedInfo($sliderSpeedVal);?>
+                    });
+                });
+            </script>
+            <div class="flexslider">
+                <ul class="slides">
+                    <?php foreach ($sliderCollections as $sliderCollection):?>  
+                        <li> 
+                            <a target="blank" href="<?php if(empty($sliderCollection->getContent())){ 
+                                echo "javascript:void(0)"; 
+                                } else { echo $sliderCollection->getContent(); } ?>"><?php if($stretchImageVal == 1): ?><img style="width: 100%" src="<?php echo $sliderCollection->getFilename(); ?>" 
+                                alt="<?php echo $sliderCollection->getTitle(); ?>"title="<?php echo $sliderCollection->getTitle(); ?>" 
+                                 /> <?php else:?> <img src="<?php echo $sliderCollection->getFilename(); ?>" 
+                                alt="<?php echo $sliderCollection->getTitle(); ?>"title="<?php echo $sliderCollection->getTitle(); ?>" 
+                                class= "slider-image" /> <?php endif; ?>
+                            </a>
+                            <?php if(!empty($sliderCollection->getTitle())):?>
+                                <p class="image-caption"><?php echo $sliderCollection->getTitle(); ?></p>
+                            <?php endif;?>
+                        </li>
+                    <?php endforeach;?>
+                </ul>
+            </div>
+            <?php
+            break;
+
+        case 'owlcarousel':
+            ?>
+            <script type="text/javascript">
+                requirejs(['jquery','owlcarousel'],function($,owl){
+                    $('.owl-carousel').owlCarousel({
+                        items: '<?php echo $countImages; ?>',
+                        autoplay: true,
+                        dots: <?php getDotStatus($sliderNavDots);?>,
+                        loop: <?php getLoopVal($sliderLoopThrough); ?>
+                    });
+                });
+            </script>
+            <div class="owl-carousel">
+                <?php foreach ($sliderCollections as $sliderCollection):?>  
+                    <a target="blank" href="<?php if(empty($sliderCollection->getContent())){ echo "javascript:void(0)"; 
+                        } else { echo $sliderCollection->getContent(); } ?>"><?php if($stretchImageVal == 1): ?><img style="width: 100%" src="<?php echo $sliderCollection->getFilename(); ?>" 
+                            alt="<?php echo $sliderCollection->getTitle(); ?>"title="<?php echo $sliderCollection->getTitle(); ?>" /> <?php else:?> 
+                            <img src="<?php echo $sliderCollection->getFilename(); ?>" 
+                            alt="<?php echo $sliderCollection->getTitle(); ?>"title="<?php echo $sliderCollection->getTitle(); ?>" 
+                            class= "slider-image" /> <?php endif; ?>
+                    </a>
+                    <?php if(!empty($sliderCollection->getTitle())):?>
+                        <p class="image-caption"><?php echo $sliderCollection->getTitle(); ?></p>
+                    <?php endif;?>
+                <?php endforeach;?>
+            </div>
+            <?php
+            break;
+
+        case 'unslider':
+            ?>
+            <script type="text/javascript">
+                requirejs(['jquery','unslider'],function($,unslider){
+                    $('.automatic-slider').unslider({
+                        autoplay: <?php autoPlay($autoPlay);?>,
+                        arrows: true,
+                        delay:<?php sliderSpeedInfo($sliderSpeedVal);?> 
+                    });
+                });
+            </script>
+            <div class="automatic-slider">
+                <ul>
+                    <?php foreach ($sliderCollections as $sliderCollection):?>  
+                        <li> 
+                            <a target="blank" href="<?php if(empty($sliderCollection->getContent())){ echo "javascript:void(0)"; 
+                                } else { echo $sliderCollection->getContent(); } ?>"><?php if($stretchImageVal == 1): ?><img style="width: 100%" src="<?php echo $sliderCollection->getFilename(); ?>" 
+                                alt="<?php echo $sliderCollection->getTitle(); ?>"title="<?php echo $sliderCollection->getTitle(); ?>" 
+                                 /> <?php else:?> <img src="<?php echo $sliderCollection->getFilename(); ?>" 
+                                alt="<?php echo $sliderCollection->getTitle(); ?>"title="<?php echo $sliderCollection->getTitle(); ?>" 
+                                class= "slider-image" /> <?php endif; ?>
+                            </a>
+                            <?php if(!empty($sliderCollection->getTitle())):?>
+                                <p class="image-caption"><?php echo $sliderCollection->getTitle(); ?></p>
+                            <?php endif;?>
+                        </li>
+                    <?php endforeach;?>
+                </ul>
+            </div>
+            <?php
+            break;
+
+        default:
+    }
+    ?>
+    </div>
+    <?php
+}
+?>

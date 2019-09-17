@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Excellence_Adminhtml::admin" title="Instagram">
+                <resource id="Excellence_Instagram::instagram" title="Instagram" sortOrder="40">
+                    <resource id="Excellence_Instagram::manage" title="Instagram Module" sortOrder="10">
+						<resource id="Excellence_Instagram::save" title="Save Instagram" sortOrder="10" />
+                        <resource id="Excellence_Instagram::news_delete" title="Delete Instagram" sortOrder="20" />
+					</resource>
+                </resource>
+                <resource id="Excellence_Adminhtml::stores" title="Instagram Section">
+                    <resource id="Excellence_Adminhtml::stores_settings" title="Instagram Section">
+                        <resource id="Excellence_Adminhtml::config" title="Instagram Section">
+                            <resource id="Excellence_Instagram::config_instagram" title="Instagram Section" sortOrder="50" />
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

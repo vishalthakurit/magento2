@@ -1,0 +1,105 @@
+<?php
+  /**
+    * $block Excellence\Instagram\Block\Widget\ImageSlider
+    */
+  $itemNumber    = 0;
+  $autoPlay      = $block->getAutoplay(); 
+  $timeOut       = 1;//$block->getTimeout(); 
+  $displayImage  = $block->getDisplayimage(); 
+  $category      = $block->getCategory();
+  $recentImageNo = $block->getRecentimageno();
+  $recentImage   = $block->getRecentPost();
+
+  if(empty($recentImageNo)){
+    $recentImageNo = 6;
+  }
+
+  if($category === "recentImage"){
+    $itemNumber = $recentImageNo;
+  }else{
+    $itemNumber = $displayImage;
+  }
+  
+  ?>
+
+  <section id="instagram-carousel">
+    <div class="row">
+      <?php
+
+      if(!strcmp($category,"hashTagImage")){
+        ?>
+        <h3><?php echo __(" @Instagram Hash Tag Images "); ?></h3>
+        <?php
+      }else{
+        ?>
+        <h3><?php echo __(" @Follow Us On Instagram "); ?></h3>
+        <?php
+      }
+      ?>
+
+      <div class="owl-carousel owl-theme">
+
+        <?php
+        if(!strcmp($category,"hashTagImage")){
+          $instaProduct = $block->getInstaCollection();
+          foreach ($instaProduct as $val) {
+            $prId = $val->getProductId();          
+            $jsonData = $val->getImageUrl();
+            $arrayData = json_decode($jsonData, TRUE);
+            foreach ($arrayData as $images) {
+              ?>
+              <div class="slider-main-div-hash"><img alt="linker error" src= <?php echo $images;  ?> /></div>
+              <?php
+            } 
+          }
+        }else{
+          $arrIndex = 0;
+          
+          foreach ($recentImage as $images) {
+            if($arrIndex <= $recentImageNo){
+              if(array_key_exists($arrIndex, $images)) {
+                $arrIndex++;
+                foreach ($images as $image) { ?>
+                  <div class="slider-main-div">
+                    <a href="<?= /* escape unaurthorized */ $image['link'] ?>" target="_blank">
+                      <img alt="linker error" src= <?= /* escape unaurthorized */ $image['images']['standard_resolution']['url']; ?> />
+                    </a>
+                  </div><?php
+                }
+              }
+            }
+          }
+        }
+        ?>
+      </div>
+    </div>
+  </section>
+  <script>
+    require([
+      'jquery',
+      'image-slider'
+      ], function ($) {
+        'use strict';
+        var control = $('.owl-carousel');
+        control.owlCarousel({
+          items: <?php echo $itemNumber; ?>,
+          loop: true,
+          margin: 10,
+          autoplay: <?php echo $autoPlay; ?>,
+          autoplayTimeout: <?php echo $timeOut; ?>,
+          autoplayHoverPause: true,
+          navText: ["<i class='fa fa-arrow-left'></i>","<i class='fa fa-arrow-right'></i>"],
+          responsive:{
+            0:{
+              items:2
+            },
+            480:{
+              items:2
+            },
+            992:{
+              items:<?php echo $itemNumber; ?>
+            }
+          }
+        });
+      });
+    </script>

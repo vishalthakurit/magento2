@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Amasty Team
+ * @copyright Copyright (c) 2019 Amasty (https://www.amasty.com)
+ * @package Amasty_Fbreview
+ */
+-->
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="head.additional">
+            <block class="Amasty\Fbreview\Block\FbHead" name="amfbreview.head" template="head.phtml"/>
+        </referenceBlock>
+        <referenceBlock name="product.info.details">
+            <block class="Amasty\Fbreview\Block\FbList"
+                   name="amfbreview.list"
+                   group="detailed_info"
+                   template="Amasty_Fbreview::list.phtml"/>
+        </referenceBlock>
+    </body>
+</page>

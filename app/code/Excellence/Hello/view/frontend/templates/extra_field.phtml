@@ -1,0 +1,29 @@
+<fieldset class="fieldset create account">
+    <legend class="legend"><span><?php /* @escapeNotVerified */echo __('Additional Information') ?></span></legend><br>
+    <div class="field custom_skype">
+        
+        <label class="label" for="email"><span><?= $block->escapeHtml(__('Skype Account')) ?></span></label>
+        <div class="control">
+            <input type="text" name="skype_test" id="skype_test" title="<?php /* @escapeNotVerified */echo __('My Custom Attribute') ?>" class="input-text" data-validate="{required:false}" autocomplete="off">
+        </div>
+
+    </div>
+
+    <div class="field custom_account_id">
+
+        <label class="label" for="email"><span><?= $block->escapeHtml(__('Account Id')) ?></span></label>
+        <div class="control">
+            <input type="text" name="account_id" id="account_id" title="<?php /* @escapeNotVerified */echo __('My Custom Attribute') ?>" class="input-text" data-validate="{required:false}" autocomplete="off">
+        </div>
+
+    </div>
+
+    <div class="field custom_amount_spend required">
+
+        <label class="label" for="email"><span><?= $block->escapeHtml(__('Amount Spend')) ?></span></label>
+        <div class="control">
+            <input type="text" name="amount_spend" id="amount_spend" title="<?php /* @escapeNotVerified */echo __('My Custom Attribute') ?>" class="input-text" data-validate="{required:true}" autocomplete="off">
+        </div>
+
+    </div>
+</fieldset>

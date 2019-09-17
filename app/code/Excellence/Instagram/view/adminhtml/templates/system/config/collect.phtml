@@ -1,0 +1,22 @@
+<?php
+  $clientId = $block->getClientId();
+  $uri = $block->getRedirectUri();
+?>
+<script type="text/javascript">
+    require([
+        'jquery',
+        'prototype'
+    ], function(jQuery){
+        var clientId = jQuery("input#instagramSection_setting_client_ID").val();
+        var clientSecret = jQuery("input#instagramSection_setting_client_secret_ID").val();
+
+        var collectSpan = jQuery('#collect_span');
+        var popUpWindow;
+        jQuery('#collect_button').click(function () {
+            popUpWindow = window.open('https://instagram.com/oauth/authorize/?client_id=<?php echo $clientId ?>&redirect_uri=<?php echo $uri ?>&response_type=token','popUpWindow','height=350,width=500,left=450,top=0,,scrollbars=yes,menubar=no');
+            popUpWindow.focus();
+        });
+
+    });
+</script>
+<?php echo $block->getButtonHtml(); ?>
