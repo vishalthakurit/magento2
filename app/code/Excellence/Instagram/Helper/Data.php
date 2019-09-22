@@ -6,6 +6,7 @@
 namespace Excellence\Instagram\Helper;
 
 use Magento\Framework\App\Filesystem\DirectoryList;
+use Magento\Store\Model\ScopeInterface;
 
 class Data extends \Magento\Framework\App\Helper\AbstractHelper
 {
@@ -15,7 +16,13 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      * @var string
      */
     const XML_PATH_ITEMS_PER_PAGE     = 'instagram/view/items_per_page';
-    
+    /**
+     * Path to store config where instagram active status store
+     *
+     * @var string
+     */
+    const XML_PATH_INSTAGRAM = 'instagramSection/';
+
     /**
      * Media path to extension images
      *
@@ -65,12 +72,12 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      * @var array
      */
     protected $_imageSize   = array(
-        'minheight'     => self::MIN_HEIGHT,
-        'minwidth'      => self::MIN_WIDTH,
-        'maxheight'     => self::MAX_HEIGHT,
-        'maxwidth'      => self::MAX_WIDTH,
+    'minheight'     => self::MIN_HEIGHT,
+    'minwidth'      => self::MIN_WIDTH,
+    'maxheight'     => self::MAX_HEIGHT,
+    'maxwidth'      => self::MAX_WIDTH,
     );
-    
+
     /**
      * @var \Magento\Framework\Filesystem\Directory\WriteInterface
      */
@@ -85,28 +92,28 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      * @var \Magento\Framework\HTTP\Adapter\FileTransferFactory
      */
     protected $httpFactory;
-    
+
     /**
      * File Uploader factory
      *
      * @var \Magento\Core\Model\File\UploaderFactory
      */
     protected $_fileUploaderFactory;
-    
+
     /**
      * File Uploader factory
      *
      * @var \Magento\Framework\Io\File
      */
     protected $_ioFile;
-    
+
     /**
      * Store manager
      *
      * @var \Magento\Store\Model\StoreManagerInterface
      */
     protected $_storeManager;
-    
+
     /**
      * @param \Magento\Framework\App\Helper\Context $context
      */
@@ -131,7 +138,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         $this->_imageFactory = $imageFactory;
         parent::__construct($context);
     }
-    
+
     /**
      * Remove Instagram item image by image filename
      *
@@ -147,7 +154,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         }
         return false;
     }
-    
+
     /**
      * Return URL for resized Instagram Item Image
      *
@@ -169,7 +176,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 
         if (!is_null($height)) {
             if ($height < self::MIN_HEIGHT || $height > self::MAX_HEIGHT) {
-                return false;
+                return false;   
             }
             $height = (int)$height;
         }
@@ -194,7 +201,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
             return false;
         }
     }
-    
+
     /**
      * Upload image and return uploaded image file name or false
      *
@@ -209,26 +216,26 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         $adapter->addValidator(
             new \Zend_Validate_File_FilesSize(['max' => self::MAX_FILE_SIZE])
         );
-        
+
         if ($adapter->isUploaded($scope)) {
             // validate image
             if (!$adapter->isValid($scope)) {
                 throw new \Magento\Framework\Model\Exception(__('Uploaded image is not valid.'));
             }
-            
+
             $uploader = $this->_fileUploaderFactory->create(['fileId' => $scope]);
             $uploader->setAllowedExtensions(['jpg', 'jpeg', 'gif', 'png']);
             $uploader->setAllowRenameFiles(true);
             $uploader->setFilesDispersion(false);
             $uploader->setAllowCreateFolders(true);
-            
+
             if ($uploader->save($this->getBaseDir())) {
                 return $uploader->getUploadedFileName();
             }
         }
         return false;
     }
-    
+
     /**
      * Return the base media directory for Instagram Item images
      *
@@ -241,25 +248,39 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         )->getAbsolutePath(self::MEDIA_PATH);
         return $path;
     }
-    
+
     /**
-     * Return the Base URL for Instagram Item images
-     *
-     * @return string
-     */
+    * Return the Base URL for Instagram Item images
+    *
+    * @return string
+    */
     public function getBaseUrl()
     { 
         return $this->_storeManager->getStore()->getBaseUrl(
-                \Magento\Framework\UrlInterface::URL_TYPE_MEDIA
-            ) . '/' . self::MEDIA_PATH;
+            \Magento\Framework\UrlInterface::URL_TYPE_MEDIA
+        ) . '/' . self::MEDIA_PATH;
     }
-    
+
     /**
-     * Return the number of items per page
-     * @return int
-     */
+    * Return the number of items per page
+    * @return int
+    */
     public function getInstagramPerPage()
     {
         return abs((int)$this->_scopeConfig->getValue(self::XML_PATH_ITEMS_PER_PAGE, \Magento\Store\Model\ScopeInterface::SCOPE_STORE));
+    }
+
+    /**
+    * Return the number module status
+    * @return int
+    */
+    public function getStatusValue($field,$storeId = null){
+        return $this->scopeConfig->getValue(
+            $field, ScopeInterface::SCOPE_STORE, $storeId
+        );
+    }
+    public function getActiveStatus($code, $storeId = null)
+    {
+        return $this->getStatusValue(self::XML_PATH_INSTAGRAM .'setting/'. $code, $storeId);
     }
 }

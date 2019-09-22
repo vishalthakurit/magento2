@@ -42,7 +42,7 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
         parent::_construct();
 
         if ($this->_isAllowedAction('Excellence_Instagram::save')) {
-            $this->buttonList->update('save', 'label', __('Save Instagram'));
+            $this->buttonList->update('save', 'label', __('Save Slider'));
             $this->buttonList->add(
                 'saveandcontinue',
                 [
@@ -61,7 +61,7 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
         }
 
         if ($this->_isAllowedAction('Excellence_Instagram::instagram_delete')) {
-            $this->buttonList->update('delete', 'label', __('Delete Instagram'));
+            $this->buttonList->update('delete', 'label', __('Delete Slider'));
         } else {
             $this->buttonList->remove('delete');
         }
@@ -75,9 +75,9 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
     public function getHeaderText()
     {
         if ($this->_coreRegistry->registry('instagram')->getId()) {
-            return __("Edit Instagram '%1'", $this->escapeHtml($this->_coreRegistry->registry('instagram')->getTitle()));
+            return __("Edit Slider '%1'", $this->escapeHtml($this->_coreRegistry->registry('instagram')->getTitle()));
         } else {
-            return __('New Instagram');
+            return __('New Slider');
         }
     }
 

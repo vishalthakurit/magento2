@@ -5,10 +5,10 @@ use Magento\Framework\View\Element\Template;
 
 class ImageSlider extends Template
 {
-    protected $_template = "widget/imageslider.phtml";
-    protected $_executeApi;
-    protected $_collection;
-		
+	protected $_template = "widget/imageslider.phtml";
+	protected $_executeApi;
+	protected $_collection;
+
 	public function __construct(
 		\Magento\Backend\Block\Template\Context $context,
 		\Excellence\Instagram\Helper\ExecuteApi $executeApi,
@@ -22,20 +22,22 @@ class ImageSlider extends Template
 	}
 
 	/**
-     * @return Collection
-     */
+	 * @return Collection
+	 */
 	public function getInstaCollection()
-    {
-    	$resultPage = $this->_collection->create();
-        $collection = $resultPage->getCollection(); 
+	{
+		$resultPage = $this->_collection->create();
+		$collection = $resultPage->getCollection(); 
 
-        return $collection;
-    }  
+		return $collection;
+	}  
 
+	/**
+	 * @return recentPost
+	 */
 	public function getRecentPost()
-    {
-    	$apiInfo = $this->_executeApi->getRecentPostFromInsta();
-        return $apiInfo;
-    }
-
+	{
+		$apiInfo = $this->_executeApi->getRecentPostFromInsta();
+		return $apiInfo;
+	}
 }

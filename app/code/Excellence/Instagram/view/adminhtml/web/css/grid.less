@@ -1,7 +1,6 @@
 .searchImg {
     float: right;
     background: #eb5202;
-    color: rgba(241, 241, 241, 1);
     border: 2px solid #eb5202;
     height: 24px;
     padding: 6px 22px;
@@ -9,7 +8,11 @@
     font-size: 17px;
     text-shadow: 1px 1px 0 rgba(0,0,0,0.25);
     font-weight: 600;
+}
+a.searchImg {
+    color: #fff;
     text-decoration: none;
+    cursor: pointer;
 }
 .mainDiv {
     width: 100%;
@@ -18,11 +21,12 @@
 #searchBox {
     float: right;
     height: 36px;
-    width: 28%;
+    width: 40%;
     border-right: 0px;
-    border-left: 1px solid grey;
-    border-top: 1px solid grey;
-    border-bottom: 1px solid grey;
+    padding-left: 10px;
+    border-left: 1px solid #878787;
+    border-top: 1px solid #878787;
+    border-bottom: 1px solid #878787;
 }
 .imagesShow {
     img {
@@ -32,4 +36,39 @@
 }
 .img_Container {
     display: inline-block;
+}
+.imagesShow img.imageSelect {
+    width: 126px;
+    margin-right: 5px;
+    margin-top: 15px;
+}
+.selected-image-area {
+    margin-top: 50px;
+    border: 1px solid gray;
+    height: 150px;
+}
+.selected-images,
+.main-div-section {
+    display: -webkit-inline-box;
+    padding-right: 5px;
+}
+.selected-image-area .image {
+    display: block;
+    margin: unset;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+}
+.selected-image-area .image h4 {
+    font-size: 15px;
+    font-weight: 400;
+    margin: unset;
+}
+.selected-images .image img {
+    width: 85px;
+}
+.selected-image-area {
+    overflow: auto;
+    height: unset;
+    max-height: 260px;
 }

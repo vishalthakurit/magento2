@@ -46,13 +46,13 @@ class Index extends \Magento\Backend\App\Action
         $resultPage->setActiveMenu(
             'Excellence_Instagram::instagram_manage'
         )->addBreadcrumb(
-            __('Instagram'),
-            __('Instagram')
+            __('Slider'),
+            __('Slider')
         )->addBreadcrumb(
-            __('Manage Instagram'),
-            __('Manage Instagram')
+            __('Manage Slider'),
+            __('Manage Slider')
         );
-        $resultPage->getConfig()->getTitle()->prepend(__('Instagram'));
+        $resultPage->getConfig()->getTitle()->prepend(__('Manage Product Slider'));
         return $resultPage;
     }
 }

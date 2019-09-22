@@ -1,105 +1,170 @@
 <?php
-  /**
+    /**
     * $block Excellence\Instagram\Block\Widget\ImageSlider
     */
-  $itemNumber    = 0;
-  $autoPlay      = $block->getAutoplay(); 
-  $timeOut       = 1;//$block->getTimeout(); 
-  $displayImage  = $block->getDisplayimage(); 
-  $category      = $block->getCategory();
-  $recentImageNo = $block->getRecentimageno();
-  $recentImage   = $block->getRecentPost();
+    $helper = $this->helper('Excellence\Instagram\Helper\Data');
+    $itemNumber    = 0;
+    $autoPlay      = $block->getAutoplay(); 
+    $timeOut       = $block->getTimeout(); 
+    $displayImage  = $block->getDisplayimage(); 
+    $category      = $block->getCategory();
+    $recentImageNo = $block->getRecentimageno();
+    $recentImage   = $block->getRecentPost();
+    $isSlider      = $block->getIsslider();
+    $status        = $helper->getActiveStatus('active');
 
-  if(empty($recentImageNo)){
-    $recentImageNo = 6;
-  }
+    if(empty($recentImageNo)){
+        $recentImageNo = 6;
+    }
 
-  if($category === "recentImage"){
-    $itemNumber = $recentImageNo;
-  }else{
-    $itemNumber = $displayImage;
-  }
-  
-  ?>
+    if($category === "recentImage"){
+        $itemNumber = $recentImageNo;
+    }else{
+        $itemNumber = $displayImage;
+    }
 
-  <section id="instagram-carousel">
-    <div class="row">
-      <?php
-
-      if(!strcmp($category,"hashTagImage")){
-        ?>
-        <h3><?php echo __(" @Instagram Hash Tag Images "); ?></h3>
-        <?php
-      }else{
-        ?>
-        <h3><?php echo __(" @Follow Us On Instagram "); ?></h3>
-        <?php
-      }
-      ?>
-
-      <div class="owl-carousel owl-theme">
-
-        <?php
-        if(!strcmp($category,"hashTagImage")){
-          $instaProduct = $block->getInstaCollection();
-          foreach ($instaProduct as $val) {
-            $prId = $val->getProductId();          
-            $jsonData = $val->getImageUrl();
-            $arrayData = json_decode($jsonData, TRUE);
-            foreach ($arrayData as $images) {
-              ?>
-              <div class="slider-main-div-hash"><img alt="linker error" src= <?php echo $images;  ?> /></div>
-              <?php
-            } 
-          }
-        }else{
-          $arrIndex = 0;
-          
-          foreach ($recentImage as $images) {
-            if($arrIndex <= $recentImageNo){
-              if(array_key_exists($arrIndex, $images)) {
+    $userName = '';
+    $arrIndex = 0;
+    foreach ($recentImage as $images) {
+        if($arrIndex <= $recentImageNo){
+            if(array_key_exists($arrIndex, $images)) {
                 $arrIndex++;
-                foreach ($images as $image) { ?>
-                  <div class="slider-main-div">
-                    <a href="<?= /* escape unaurthorized */ $image['link'] ?>" target="_blank">
-                      <img alt="linker error" src= <?= /* escape unaurthorized */ $image['images']['standard_resolution']['url']; ?> />
-                    </a>
-                  </div><?php
+                foreach ($images as $image) { 
+                    $userName = $image['user']['username'];
+                    break;
                 }
-              }
             }
-          }
         }
-        ?>
-      </div>
-    </div>
-  </section>
-  <script>
+    }
+?>
+<?php if($status && $isSlider):?>
+    <section id="instagram-carousel">
+        <div class="row">
+            <?php if(!strcmp($category,"hashTagImage")){ ?>
+                <div class="instagram-image-slider">
+                    <h3><?= __("Instagram Hash Tag Image Collection") ?></h3>
+                    <p class="slider-subtitle"> <?= __("Here is what's trending on Magestore. For More, ") ?>
+                        <a href="https://www.instagram.com/<?= ($userName); ?>" class="follow-instagram-link" target="_blank"><?php echo __("Follow Us On Instagram"); ?>
+                            <img src="<?php echo $this->getViewFileUrl('Excellence_Instagram::images/logo-instagram.png'); ?>" alt="instagram-logo">
+                        </a>
+                    </p>
+                </div>
+            <?php }else{ ?>
+                <div class="instagram-image-slider">
+                    <h3><?= __("Our Instagram Image Collection") ?></h3>
+                    <p class="slider-subtitle"><?= __("Here is what's trending on Magestore. For More, ") ?>
+                        <a href="https://www.instagram.com/<?= ($userName); ?>" class="follow-instagram-link" target="_blank"><?php echo __("Follow Us On Instagram"); ?>
+                            <img src="<?php echo $this->getViewFileUrl('Excellence_Instagram::images/logo-instagram.png'); ?>" alt="instagram-logo">
+                        </a>
+                    </p>
+                </div>
+            <?php } ?>
+            <div class="carousel-wrap">
+                <div class="owl-carousel owl-theme widget-slider">
+                    <?php
+                    if(!strcmp($category,"hashTagImage")){
+                        $instaData = $block->getInstaCollection();
+                        foreach($instaData as $instaValues) {
+                            $instaImageArray       = $imageTagNameArray = $postLikesArray = $postCommentsArray = $posLinksArray = [];
+                            if(count($instaValues)) {
+                                $instaImageArray   = json_decode($instaValues->getData('image_url'), true);
+                                $imageTagNameArray = json_decode($instaValues->getData('image_tag_name'), true);
+                                $postLinksArray    = json_decode($instaValues->getData('post_link'), true);
+                                $postCommentsArray =json_decode($instaValues->getData('comments'), true);
+                                $postLikesArray    = json_decode($instaValues->getData('likes'), true);
+                            }
+                            foreach ($instaImageArray as $index => $instaImage){ ?>
+                                <div class="slider-main-div-hash">
+                                    <a href="<?= $postLinksArray[$index] ?>" target="_blank">
+                                        <img alt="linker error" src="<?= $instaImage ?>"  ?>
+                                        <div class="instagram-image-details">
+                                            <div class="image-name">
+                                                <p><?= $imageTagNameArray[$index] ?></p>
+                                            </div>
+                                            <div class="image-like-comment-section">
+                                                <div class="image-like">
+                                                    <span><img src="<?php echo $this->getViewFileUrl('Excellence_Instagram::images/like.png'); ?>" class="instagram-like" alt="instagram-logo"><?= $postLikesArray[$index] ?></span>
+                                                </div>
+                                                <div class="image-comment">
+                                                    <span><img src="<?php echo $this->getViewFileUrl('Excellence_Instagram::images/comment.png'); ?>" class="instagram-comment" alt="instagram-logo"><?= $postCommentsArray[$index] ?></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            <?php } ?> 
+                        <?php } ?>
+                    <?php }else{
+                        $arrIndex = 0;
+                        foreach ($recentImage as $images) {
+                            if($arrIndex <= $recentImageNo){
+                                if(array_key_exists($arrIndex, $images)) {
+                                    $arrIndex++;
+                                    foreach ($images as $image) { ?>
+                                        <div class="slider-main-div">
+                                            <a href="<?= /* escape unaurthorized */ $image['link'] ?>" target="_blank">
+                                                <img alt="linker error" src=< ?=/ * escape unaurthorized */ $image[ 'images'][ 'standard_resolution'][ 'url']; ?> />
+                                                <div class="instagram-image-details">
+                                                    <div class="image-name">
+                                                        <p>
+                                                            <?php
+                                                            if(count($image['caption']['text']) > 0){
+                                                                $image['caption']['text'] = substr($image['caption']['text'], 0, 20)."...";  
+                                                                echo $image['caption']['text'];
+                                                            }
+                                                            ?>
+                                                        </p>
+                                                    </div>
+                                                    <div class="image-like-comment-section">
+                                                        <div class="image-like">
+                                                            <span><img src="<?php echo $this->getViewFileUrl('Excellence_Instagram::images/like.png'); ?>" class="instagram-like" alt="instagram-logo"><?= __($image['likes']['count']); ?></span>
+                                                        </div>
+                                                        <div class="image-comment">
+                                                            <span><img src="<?php echo $this->getViewFileUrl('Excellence_Instagram::images/comment.png'); ?>" class="instagram-comment" alt="instagram-logo"><?= __($image['comments']['count']); ?></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    <?php } ?>
+                                <?php } ?>
+                            <?php } ?>
+                        <?php } ?>
+                    <?php } ?>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+<?php endif;?>
+<script>
     require([
-      'jquery',
-      'image-slider'
-      ], function ($) {
+        'jquery',
+        'image-slider'
+    ], function($) {
         'use strict';
-        var control = $('.owl-carousel');
+        var control = $('.owl-carousel.widget-slider');
         control.owlCarousel({
-          items: <?php echo $itemNumber; ?>,
-          loop: true,
-          margin: 10,
-          autoplay: <?php echo $autoPlay; ?>,
-          autoplayTimeout: <?php echo $timeOut; ?>,
-          autoplayHoverPause: true,
-          navText: ["<i class='fa fa-arrow-left'></i>","<i class='fa fa-arrow-right'></i>"],
-          responsive:{
-            0:{
-              items:2
-            },
-            480:{
-              items:2
-            },
-            992:{
-              items:<?php echo $itemNumber; ?>
+            items: <?php echo $itemNumber; ?>,
+            loop: true,
+            margin: 10,
+            autoplay: <?php echo $autoPlay; ?>,
+            autoplayTimeout: <?php echo $timeOut; ?>,
+            autoplayHoverPause: true,
+            nav: true,
+            dots: false,
+            navText: ["<div><img src='<?php echo $this->getViewFileUrl('Excellence_Instagram::images/left-nav.png'); ?>'/></div>", "<div><img src='<?php echo $this->getViewFileUrl('Excellence_Instagram::images/right-nav.png'); ?>'/></div>"],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                480: {
+                    items: 2
+                },
+                992: {
+                    items: <?php echo $itemNumber; ?>
+                }
             }
-          }
         });
-      });
-    </script>
+    });
+</script>

@@ -5,40 +5,96 @@
 <?php 
 $object = \Magento\Framework\App\ObjectManager::getInstance();
 $moduleStatus = $object->get('Magento\Framework\App\Config\ScopeConfigInterface') ->getValue('instagramSection/setting/active');
+
+$sliderStatus = 0;
 ?>
 <!-- coding for slider on Product Page -->
-  
-<div class="owl-carousel">
-  <?php
+<?php
   $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
   $product = $objectManager->get('Magento\Framework\Registry')->registry('current_product');
   $currentProductId = $product->getId();
   $instaProduct = $objectManager->create('Excellence\Instagram\Model\Instagram')->getCollection();
-  $data = $instaProduct->getData();?>
-
-
-  <?php for($i=0;$i<count($data);$i++){
-    $prId = $data[$i]['product_id'];          
-    if($prId == $currentProductId){
-      $jsonData = $data[$i]['image_url'];
-      $arrayData = json_decode($jsonData, TRUE); 
-      for ($j=0; $j <count($arrayData); $j++)  { ?>
-      <div><img alt="Owl Image" src= <?php echo $arrayData[$j];  ?> /></div>
-      <?php }
+  $data = $instaProduct->getData();
+?>
+<?php
+  $userName = '';
+  $heading = '';
+  $subHeading = '';
+  for($i=0;$i<count($data);$i++){
+    if($data[$i]['product_id'] == $currentProductId){
+      $sliderStatus = $data[$i]['status'];
+      break;
     }
   }
+  if($sliderStatus == 1){
+    ?>
+    <section id="instagram-carousel">
+    <div class="row">
+    <div class="carousel-wrap">
+    <div class="owl-carousel product-slider">
 
-  ?>
+    <?php for($i=0;$i<count($data);$i++){
+        
+        $prId = $data[$i]['product_id'];  
+        if($prId == $currentProductId ){
+          $jsonData = $data[$i]['image_url'];
+          $imageTagName = $data[$i]['image_tag_name'];
+          $imageLink = $data[$i]['post_link'];
+          $likes = $data[$i]['likes'];
+          $comments = $data[$i]['comments'];
+          $arrayData = json_decode($jsonData, TRUE);
+          $imageTagNameCollection = json_decode($imageTagName, TRUE);
+          $imageLinkCollection = json_decode($imageLink, TRUE);
+          $imageLikes = json_decode($likes, TRUE);
+          $imageComments = json_decode($comments, TRUE);
 
-</div>
+          for ($j=0; $j <count($arrayData); $j++)  { ?>
+          <div>
+            <a href="<?= $imageLinkCollection[$j];?>" target="blank"><img alt="Owl Image" src= <?php echo $arrayData[$j];  ?> />
+              <div class="instagram-image-details">
+                <div class="image-name">
+                  <p>
+                    <?php
+                      $captions = substr($imageTagNameCollection[$j], 0, 20)."...";
+                    ?>
+                    <?= __($captions); ?>    
+                  </p>
+                </div>
+                <div class="image-like-comment-section">
+                  <div class="image-like">
+                    <span><img src="<?php echo $this->getViewFileUrl('Excellence_Instagram::images/like.png'); ?>" class="instagram-like" alt="instagram-logo"><?= __($imageLikes[$j]); ?></span>
+                  </div>
+                  <div class="image-comment">
+                    <span><img src="<?php echo $this->getViewFileUrl('Excellence_Instagram::images/comment.png'); ?>" class="instagram-comment" alt="instagram-logo"><?= __($imageComments[$j]); ?></span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <?php }
+        }
+      }
+
+      ?>
+
+    </div>
+    </div>
+    <hr>
+    </div>
+    </section>
+
+    <?php
+  }
+?>
+
 <script type="text/javascript">
 
   require([
     'jquery',
-    'prototype'
+    'image-slider'
     ], function(jQuery){
      jQuery(document).ready(function(){
-      jQuery(".owl-carousel").owlCarousel({
+      jQuery(".owl-carousel.product-slider").owlCarousel({
         loop:true,
         margin:10,
         nav:true,
@@ -55,17 +111,12 @@ $moduleStatus = $object->get('Magento\Framework\App\Config\ScopeConfigInterface'
         }
       });
     });
-     var owl = jQuery('.owl-carousel');
-     owl.on('mousewheel', '.owl-stage', function (e) {
-      if (e.deltaY>0) {
-        owl.trigger('next.owl');
-      } else {
-        owl.trigger('prev.owl');
-      }
-      e.preventDefault();
-    });
+     var owl = jQuery('.owl-carousel.product-slider');
       owl.owlCarousel({
-        items:4,
+        items:5,
+        nav: true,
+        dots: false,
+        navText: ["<div><img src='<?php echo $this->getViewFileUrl('Excellence_Instagram::images/left-nav.png'); ?>'/></div>","<div><img src='<?php echo $this->getViewFileUrl('Excellence_Instagram::images/right-nav.png'); ?>'/></div>"],
         loop:true,
         margin:10,
         autoplay:true,
@@ -80,3 +131,30 @@ $moduleStatus = $object->get('Magento\Framework\App\Config\ScopeConfigInterface'
     });
 </script>
 
+<style>
+.product-slider-heading {
+    text-align: -webkit-center;
+}
+.product-slider-heading .main-heading h3 {
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: 200;
+    text-transform: capitalize;
+    margin-top: unset;
+}
+.product-slider-heading .sub-heading p {
+    font-size: 18px;
+}
+.owl-item>div>a>.caption, .slider-main-div>div>a>.caption {
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    font-size: 20px;
+    width: 100%;
+    background-color: rgba(27, 26, 26, 0.5);
+    text-align: center;
+    font-weight: 100;
+    color: #fff;
+}
+</style>

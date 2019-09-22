@@ -16,11 +16,11 @@ class Instagram extends \Magento\Backend\Block\Widget\Grid\Container
     {
         $this->_controller = 'adminhtml_instagram';
         $this->_blockGroup = 'Excellence_Instagram';
-        $this->_headerText = __('Instagram');
-        $this->_addButtonLabel = __('Add New Instagram');
+        $this->_headerText = __('Manage Product Slider');
+        $this->_addButtonLabel = __('Add New Slider');
         parent::_construct();
         if ($this->_isAllowedAction('Excellence_Instagram::save')) {
-            $this->buttonList->update('add', 'label', __('Add New Instagram'));
+            $this->buttonList->update('add', 'label', __('Add New Slider'));
         } else {
             $this->buttonList->remove('add');
         }

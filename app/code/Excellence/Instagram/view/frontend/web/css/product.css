@@ -6,8 +6,9 @@
 section#instagram-carousel h3 {
     margin: auto;
     text-align: center;
-    text-transform: uppercase;
-    padding-bottom: 15px;
+    text-transform: capitalize;
+    font-size: 30px;
+    font-weight: 300;
 }
 
 #instagram-carousel h3:before {
@@ -18,12 +19,203 @@ section#instagram-carousel h3 {
     right: -75px;
 }
 
+section#instagram-carousel .instagram-image-slider {
+    text-align: -webkit-center;
+}
+
 #instagram-carousel h3:before,
 #instagram-carousel h3:after {
     position: absolute;
     content: "";
-    width: 60px;
+    /*width: 60px;*/
     height: 2px;
     background: #000;
     top: 48%;
+}
+
+.page-bottom {
+    width: 100% !important;
+}
+
+.owl-item,
+.slider-main-div {
+    position: relative;
+}
+
+.owl-item>div>a>.caption,
+.slider-main-div>div>a>.caption {
+    visibility: hidden;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    font-size: 20px;
+    width: 100%;
+    background-color: rgba(27, 26, 26, 0.5);
+    text-align: center;
+    font-size: 5vh;
+    font-weight: bold;
+    color: whitesmoke;
+    vertical-align: center;
+}
+
+.owl-item:hover .caption,
+.slider-main-div:hover .caption {
+    visibility: visible!important;
+    opacity: 1;
+    cursor: pointer;
+    pointer-events: none;
+    z-index: 2;
+    display: -webkit-flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
+section#instagram-carousel a.follow-instagram-link img {
+    width: 17px;
+    vertical-align: sub;
+    display: none;
+}
+
+section#instagram-carousel a.follow-instagram-link {
+    color: #006bb4;
+    font-weight: 400;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+section#instagram-carousel a.follow-instagram-link:hover {
+    text-decoration: underline;
+    color: darkturquoise;
+}
+
+section#instagram-carousel .instagram-image-slider p.slider-subtitle {
+    font-size: 18px;
+    padding-top: 10px;
+}
+
+.image-like-comment-section img.instagram-like,
+.image-like-comment-section img.instagram-comment {
+    width: 20px !important;
+    padding-right: 5px;
+}
+
+.image-like-comment-section .image-comment {
+    padding-left: 10px;
+}
+
+.image-like-comment-section .image-like span,
+.image-like-comment-section .image-comment span {
+    display: -webkit-inline-box;
+}
+
+.image-like-comment-section .image-comment,
+.image-like-comment-section .image-like {
+    display: -webkit-inline-box;
+}
+
+.instagram-image-details {
+    position: absolute;
+    visibility: hidden;
+    color: #000;
+    top: 0px;
+    height: 100%;
+    text-align: -webkit-center;
+    background: #ffffff7d;
+    width: 100%;
+    padding-top: 40%;
+    filter: invert(100%);
+}
+
+.owl-item:hover .instagram-image-details {
+    visibility: visible;
+}
+
+.slider-main-div a {
+    text-decoration: none !important;
+}
+
+.image-like-comment-section {
+    text-align: center;
+}
+
+.instagram-image-details .image-name p {
+    font-size: 18px;
+}
+
+
+/* for navigation controls */
+
+.carousel-wrap {
+    margin: 30px auto;
+    padding: 0 2%;
+    position: relative;
+}
+
+
+/* fix blank or flashing items on carousel */
+
+
+/* end fix */
+
+section#instagram-carousel .owl-nav>div {
+    position: absolute;
+    top: 40%;
+    background: #ffffff8c !important;
+    width: 15px;
+    height: 30px;
+    padding-top: 14px !important;
+}
+
+section#instagram-carousel .owl-nav .owl-next {
+    right: 0;
+}
+
+section#instagram-carousel .owl-nav .owl-prev {
+    left: 0;
+}
+
+section#instagram-carousel .owl-nav {
+    display: block;
+}
+
+.carousel-wrap .owl-prev img {
+    height: 22px;
+    width: 8px;
+    vertical-align: bottom;
+}
+
+.carousel-wrap .owl-next img {
+    height: 22px;
+    width: 8px;
+    vertical-align: bottom;
+}
+
+.owl-carousel.product-slider.owl-loaded.owl-drag .owl-prev {
+    text-align: -webkit-center;
+    font-size: 14px;
+    margin: 5px;
+    padding: 4px 7px;
+    background: #D6D6D6;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+
+.owl-carousel.product-slider.owl-loaded.owl-drag .owl-next {
+    text-align: -webkit-center;
+    font-size: 14px;
+    margin: 5px;
+    padding: 4px 7px;
+    background: #D6D6D6;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 3px;
 }

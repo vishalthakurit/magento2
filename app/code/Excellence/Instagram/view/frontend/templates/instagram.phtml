@@ -4,13 +4,23 @@
         'prototype'
         ], function($){
         $( document ).ready(function() {
-            console.log("Working!!!!");
             var redirectUrl = location.href;
-            var positon = redirectUrl.indexOf("=");
-            var tokenValue = redirectUrl.substring(positon+1, redirectUrl.length);
-            window.opener.document.getElementById('instagramSection_setting_access_Token').value = tokenValue;
-            setTimeout(function () { window.close();}, 3000);
-        });
+            var position = redirectUrl.indexOf("=");   
+            
+            // To get Access Token From Window URL.
+            var tokenValue = redirectUrl.substring(position+1, redirectUrl.length);
 
-     });
- </script>
+            // To get UserId From Access Token.
+            var firstDotPosition = tokenValue.split(".");
+
+            // To set the values on admin config.
+            window.opener.document.getElementById('instagramSection_setting_access_Token').value = tokenValue;
+            window.opener.document.getElementById('instagramSection_setting_user_id').value = firstDotPosition['0'];
+
+            // To close popup window.
+            setTimeout(function () { 
+                window.close();
+            }, 3000);
+        });
+    });
+</script>

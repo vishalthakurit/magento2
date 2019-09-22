@@ -28,6 +28,6 @@ class Info extends \Magento\Framework\App\Action\Action
     {
         $validFormKey = $this->formKeyValidator->validate($this->getRequest());
         $formData = $this->getRequest()->getPostValue();
-        return "Hello";
+        return $formData;
     } 
 }

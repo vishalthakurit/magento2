@@ -15,6 +15,12 @@
                 <block class="Excellence\Instagram\Block\Adminhtml\Instagram\Edit\Tab\Main" name="instagram_edit_tab_main"/>
                 <!-- <block class="Excellence\Instagram\Block\Adminhtml\Instagram\Edit\Tab\Product" name="instagram_edit_tab_product"/> -->
                 <!-- <block class="Excellence\Instagram\Block\Adminhtml\Instagram\Edit\Tab\Content" name="instagram_edit_tab_content"/> -->
+                 <block class="Excellence\Instagram\Block\Adminhtml\Instagram\Edit\Tab\Sliderconfig" name="instagram_slider_config"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">config_section</argument>
+                    <argument name="block" xsi:type="string">instagram_slider_config</argument>
+                </action>
+
                 <block class="Excellence\Instagram\Block\Adminhtml\Instagram\Edit\Tab\Image" name="instagram_edit_tab_image"/>
                 <action method="addTab">
                     <argument name="name" xsi:type="string">main_section</argument>

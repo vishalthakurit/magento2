@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="jquery/fileUploader/css/jquery.fileupload-ui.css"/>
+        <link src="jquery/fileUploader/bootstrap.js"/>
+        <css src="Excellence_Instagram::css/grid.css"/>
+    </head>
+    <update handle="editor"/>
+    <body>
+        <referenceContainer name="content">
+            <block class="Excellence\Instagram\Block\Adminhtml\Generic\Edit" name="generic_edit"/>
+        </referenceContainer>
+        <referenceContainer name="left">
+            <block class="Excellence\Instagram\Block\Adminhtml\Generic\Edit\Tabs" name="generic_edit_tabs">
+                <block class="Excellence\Instagram\Block\Adminhtml\Generic\Edit\Tab\Main" name="generic_edit_tab_main"/>
+                <!-- <block class="Excellence\Instagram\Block\Adminhtml\Generic\Edit\Tab\Product" name="generic_edit_tab_product"/> -->
+                <!-- <block class="Excellence\Instagram\Block\Adminhtml\Generic\Edit\Tab\Content" name="generic_edit_tab_content"/> -->
+                 <block class="Excellence\Instagram\Block\Adminhtml\Generic\Edit\Tab\Sliderconfig" name="generic_slider_config"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">config_section</argument>
+                    <argument name="block" xsi:type="string">generic_slider_config</argument>
+                </action>
+
+                <block class="Excellence\Instagram\Block\Adminhtml\Generic\Edit\Tab\Image" name="generic_edit_tab_image"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">main_section</argument>
+                    <argument name="block" xsi:type="string">generic_edit_tab_main</argument>
+                </action>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">content_section</argument>
+                    <argument name="block" xsi:type="string">generic_edit_tab_content</argument>
+                </action>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

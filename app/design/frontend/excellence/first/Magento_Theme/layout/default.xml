@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+ 
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+         <referenceContainer name="footer">
+            <container after="footer_links" name='social.links' htmlTag="ul" htmlClass="vishal footer links">
+                <block name="facebook" class="Magento\Framework\View\Element\Template" template="Magento_Theme::footer/facebook.phtml" />
+                <block name="twitter" class="Magento\Framework\View\Element\Template" template="Magento_Theme::footer/twitter.phtml" />
+                <block class="Magento\Framework\View\Element\Html\Link\Current" name="vishal.links">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">Vishal</argument>
+                        <argument name="path" xsi:type="string">vishal-thakur</argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+    </body>
+</page>

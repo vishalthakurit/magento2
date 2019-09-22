@@ -4,6 +4,9 @@
         <label translate="true">Instagram Image Slider</label>
         <description>Image Slider Putting On Frontend</description>
         <parameters>
+           <parameter name="isslider" xsi:type="select" source_model="Magento\Config\Model\Config\Source\Yesno" visible="true" sort_order="10" >
+                <label translate="true">Is Slider</label>
+            </parameter>
             <parameter name="autoplay" xsi:type="select" source_model="Excellence\Instagram\Model\Config\Source\AutoPlay" visible="true" sort_order="10" >
                 <label translate="true">Auto Play</label>
             </parameter>

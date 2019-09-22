@@ -71,29 +71,32 @@ class Grid extends \Magento\Backend\Block\Widget\Grid\Extended
     protected function _prepareColumns()
     {
         $this->addColumn('instagram_id', [
-            'header'    => __('ID'),
+            'header'    => __('Id'),
             'index'     => 'instagram_id',
         ]);
         $this->addColumn(
            'image_url',
            array(
-               'header' => __('IMAGE'),
+               'header' => __('Image Slider'),
                'index' => 'image_url',
                'filter' => false,
                'sortable' => false,
-               'renderer'  => '\Excellence\Instagram\Block\Adminhtml\Instagram\Grid\Renderer\Slider',
+               'renderer'  => '\Excellence\Instagram\Block\Adminhtml\Instagram\Grid\Renderer\Slider'
            )
-       );
-        $this->addColumn('insta_tag', ['header' => __('IMAGE TAG'), 'index' => 'insta_tag']);
-        $this->addColumn('product_id', ['header' => __('PRODUCT ID'), 'index' => 'product_id']);
-        
-       
-       
+        );
+        $this->addColumn('insta_tag', ['header' => __('Image Tag'), 'index' => 'insta_tag']);
+        $this->addColumn('product_id', 
+            [
+                'header' => __('Product Name'),
+                'index' => 'product_id',
+                'renderer' => \Excellence\Instagram\Block\Adminhtml\Instagram\Grid\Renderer\ProductName::class
+            ]
+        );
         
         $this->addColumn(
             'action',
             [
-                'header' => __('EDIT'),
+                'header' => __('Edit'),
                 'type' => 'action',
                 'getter' => 'getId',
                 'actions' => [

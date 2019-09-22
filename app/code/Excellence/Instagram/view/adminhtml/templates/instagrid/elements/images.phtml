@@ -1,33 +1,51 @@
 <?php
+$instagramId   = $this->getRequest()->getParam('instagram_id');
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$instagramSliderCollection = $objectManager->create('Excellence\Instagram\Model\Instagram')->load($instagramId);
 
-$data = $block->getUserConfigs();
+$selectedStore = $instagramSliderCollection->getStoreView();
 
-$tagEdit = 0;
-$jsonEdit =0;
+$instaImageArray = $imageTagNameArray = $postLikesArray = $postCommentsArray = $posLinksArray = [];
+if(count($instagramSliderCollection)) {
+    $instaImageArray = json_decode($instagramSliderCollection->getData('image_url'), true);
+    $imageTagNameArray = json_decode($instagramSliderCollection->getData('image_tag_name'), true);
+    $postLikesArray = json_decode($instagramSliderCollection->getData('likes'), true);
+    $postCommentsArray = json_decode($instagramSliderCollection->getData('comments'), true);
+    $posLinksArray = json_decode($instagramSliderCollection->getData('post_link'), true);
+}
+
+$data          = $block->getUserConfigs();
+$tagEdit       = 0;
+$jsonEdit      = 0;
 $productIdEdit = 0;
-$id = $block->getParameter();
+$id            = $block->getParameter();
 if($id){
     $dataEdit = $block->getInstaCollection();
-
     foreach ($dataEdit as $val) {
-        $instagramId = $val->getInstagramId();
-        $productId = $val->getProductId();
-        $imageUrl = $val->getImageUrl();
-        $instatag = $val->getInstaTag();
+
+        $instagramId  = $val->getInstagramId();
+        $productId    = $val->getProductId();
+        $imageUrl     = $val->getImageUrl();
+        $instatag     = $val->getInstaTag();
+
+        $username     = $val->getImageTagName();
+        $imageTagName = $val->getUsername();
+        $likes        = $val->getLikes();
+        $comments     = $val->getComments();
+        $postLink     = $val->getPostLink();
 
         if($id==$instagramId){
-            $productIdEdit = $productId;
-            $jsonEdit = $imageUrl;
-            $tagEdit = $instatag;
+            $productIdEdit  = $productId;
+            $jsonEdit       = $imageUrl;
+            $tagEdit        = $instatag;
             $imagesEditData = json_decode($jsonEdit, TRUE);
         }
     }
 }else{ $id = 0; }
-
 ?>
 
 <div class="mainDiv">
-    <a class="searchImg"><?php echo __("Search"); ?></a>
+    <a class="searchImg"><?php echo __("Search Images"); ?></a>
     <input id="searchBox" type="textbox" name="searchImage" />
 </div>
 
@@ -35,90 +53,189 @@ if($id){
 $imageDetails = array();
 for ($i=0; $i < count($data['data']) ; $i++) { 
   $instaImageId = $data['data'][$i]['id'];
-  $thumbnailimg = $data['data'][$i]['images']['thumbnail']['url'];
-  $tag = $data['data'][$i]['caption']['text'];
+  $imagelink    = $data['data'][$i]['link'];
+  $thumbnailimg = $data['data'][$i]['images']['standard_resolution']['url'];
+  $tag          = $data['data'][$i]['caption']['text'];
+
+  $username     = $data['data'][$i]['user']['username'];
+  $imageTagName = $data['data'][$i]['caption']['text'];
+  $likes        = $data['data'][$i]['likes']['count'];
+  $comments     = $data['data'][$i]['comments']['count'];
+  $postLink     = $data['data'][$i]['link'];
+
+  $imageDetails[$i]['username']=$username;
+  $imageDetails[$i]['imageTagName']=$imageTagName;
+  $imageDetails[$i]['likes']=$likes;
+  $imageDetails[$i]['comments']=$comments;
+  $imageDetails[$i]['postLink']=$postLink;
+  
   $imageDetails[$i]['instaImageId']=$instaImageId;
   $imageDetails[$i]['thmbimg']=$thumbnailimg;
   $imageDetails[$i]['tag']=$tag;
+  $imageDetails[$i]['link']=$imagelink;
 }
 ?>
-<div class="imagesShow">
+<div class="selected-image-area">
+    <?php if(!empty($instaImageArray)){ ?>
+        <div class="image">
+            <h4><?php __("You have selected these image(s) before") ?></h4>
+        </div>
+        <div class="instagram-collection-image-section">
+            <?php foreach ($instaImageArray as $index => $instaImage): ?>
+                <div class="selected-images selected-slider">
+                    <div class="images">
+                        <img class="imageSelect" src="<?= $instaImage ?>">
+                        <input type="checkbox" name="instaImgUrl[]" value="<?= $instaImage ?>" style="display: none;" checked />
+                        <input type="checkbox" name="imageTagName[]" value="<?= $imageTagNameArray[$index] ?>" style="display: none;" checked />
+                        <input type="checkbox" name="comments[]" value="<?= $postCommentsArray[$index] ?>" style="display: none;" checked />
+                        <input type="checkbox" name="likes[]" value="<?= $postLikesArray[$index] ?>" style="display: none;" checked />
+                        <input type="checkbox" name="postLink[]" value="<?= $posLinksArray[$index] ?>" style="display: none;" checked />
+                    </div>
+                </div>
+            <?php endforeach; ?>
+            </div>
+    <?php } ?>
+    <div class="image">
+        <h4>Selected Image For Product Slider</h4>
+    </div>
+    <div class="selected-images-main" id='selected-images-main'></div>
 </div>
-<div class="hiddenImg">
-</div>
+<div class="imagesShow"></div>
+<div class="hiddenImg"></div>
+
+<!-- Selected images code will go here -->
+<script id="instagram-product-slider-image" type="text/x-magento-template">
+    <div class="selected-images selected-slider-<%- data.id %>">
+        <div class="image">
+            <img class="imageSelect" src="<%- data.img_url %>">
+            <input type="checkbox" name="id[]" value="<%- data.id %>" style="display: none;" checked />
+            <input type="checkbox" name="image-link[]" value="<%- data.img_url %>" style="display: none;" checked />
+            <input type="checkbox" name="imageTagName[]" value="<%- data.imageTagName %>" style="display: none;" checked />
+            <input type="checkbox" name="comments[]" value="<%- data.comments %>" style="display: none;" checked />
+            <input type="checkbox" name="likes[]" value="<%- data.likes %>" style="display: none;" checked />
+            <input type="checkbox" name="postLink[]" value="<%- data.postLink %>" style="display: none;" checked />
+            <input type="checkbox" name="username" value="<%- data.username %>" style="display: none;" checked />
+        </div>
+    </div>
+</script>
 
 <script type="text/javascript">
-    window.prodcutEditId = <?php echo $productIdEdit ?>;
-    window.id = <?php echo $id ?>;
-    window.tagEdit = '<?php echo $tagEdit ?>';
-    window.instaData = <?php /* @escapeNotVerified */ echo \Zend_Json::encode($imageDetails);?>;
-    window.imageEdit = <?php /* @escapeNotVerified */ echo \Zend_Json::encode($jsonEdit);?>;
-    var json = window.instaData;
-    require([
-        'jquery',
-        'prototype'
-        ], function(jQuery) {
-            jQuery(".searchImg").on('click', function() {
-                var textVal = jQuery("#searchBox").val();
-                hiddenHtml = "<input type='hidden' name='instaTag' value=" + textVal + ">";
-                jQuery(".hiddenImg").html(hiddenHtml);
-                var contentHtml = "";
-                jQuery.each(json, function(i, v) {
-                    var str = v.tag;
-                    if (str != null) {
-                        if (str.match(textVal)) {
-                            contentHtml += "<img class='imageSelect' src=" + v.thmbimg + ">" + "<input class='checkboxImage' name='instaImgUrl[]' type='checkbox' value=" + v.thmbimg + ">";
-                        }
+window.prodcutEditId = <?php echo $productIdEdit ?>;
+window.id = <?php echo $id ?>;
+window.tagEdit = '<?php echo $tagEdit ?>';
+window.instaData = <?php /* @escapeNotVerified */ echo \Zend_Json::encode($imageDetails);?>;
+window.imageEdit = <?php /* @escapeNotVerified */ echo \Zend_Json::encode($jsonEdit);?>;
+var json = window.instaData;
+require([
+    'jquery',
+    "underscore",
+    "mage/template"
+    ], function($, _, mageTemplate) {
+        let instData = [];
+        let id = 1;
+        $(".searchImg").on('click', function() {
+            var textVal = $("#searchBox").val();
+            hiddenHtml = "<input type='hidden' name='instaTag' value=" + textVal + ">";
+            $(".hiddenImg").html(hiddenHtml);
+            var contentHtml = "";
+            $.each(json, function(i, v) {
+                var str = v.tag;
+                if (str != null) {
+                    if (str.match(textVal)) {
+                        contentHtml += "<div class='main-div-section'><img class='imageSelect' src=" + v.thmbimg + ">" + "<input class='checkboxImage' name='instaImgUrl[]' type='checkbox' value=" + v.thmbimg + "></div>";
                     }
-                    if(textVal){
-                      jQuery(".imagesShow").html(contentHtml);
-                  }                
-              });
-                jQuery(".imageSelect").on('click', function() {
-                    jQuery('.checkboxImage').prop('checked', true);
-                });
+                }
+                if(textVal){
+                    $(".imagesShow").html(contentHtml);
+                }                
+            });
+            $(".imageSelect").on('click', function() {
+                $('.checkboxImage').prop('checked', true);
             });
 
-            var contentHtml = '';
-            if (window.id && window.id != 0) {
-                hiddenHtml = "<input type='hidden' name='instaTag' value=" + window.tagEdit + ">";
-                jQuery(".hiddenImg").html(hiddenHtml);
-                var contentHtml = "";
-                jQuery.each(json, function(i, v) {
-                    var str = v.tag;
-                    if (str != null) {
-                        if (str.match(window.tagEdit)) {
-                            contentHtml += "<div class='img_Container'><img class='imageSelect' src=" + v.thmbimg + ">" + "<input class='checkboxImage' name='instaImgUrl[]' type='checkbox' value=" + v.thmbimg + "></div>";
+            $("input.checkboxImage").on("click", function(){
+                var parentDiv  = $(this).parent(".main-div-section");
+                var imgUrl = parentDiv.find(".imageSelect").attr("src");
+
+                let imgData = [];
+                $.each(json, function(i, v) {
+                    if (imgUrl == v.thmbimg) {
+                        imgData = {
+                            'id'          : id,
+                            'img_url'     : imgUrl,
+                            'imageTagName': v.imageTagName,
+                            'comments'    : v.comments,
+                            'likes'       : v.likes,
+                            'postLink'    : v.postLink,
+                            'username'    : v.username 
                         }
-                    }
-                    jQuery(".imagesShow").html(contentHtml);
-                    jQuery("#searchBox").val(window.tagEdit);
+                    }              
                 });
-                var parsed = JSON.parse(window.imageEdit);
-                var arr = [];
-                for (var jsonParse in parsed) {
-                    jQuery.each(json, function(i, v) {
-                        if (v.thmbimg == parsed[jsonParse]) {
-                            jQuery('.checkboxImage').each(function() {
-                                if (jQuery(this).val() == parsed[jsonParse]) {
-                                    jQuery(this).prop('checked', true);
-                                }
-                            });
-                        }
+
+                let dataExist = false;
+                let removeIndex = '';
+
+                instData.forEach(function(item,index){
+                    if(item.img_url === imgData.img_url){
+                        dataExist = true;
+                        removeIndex = index;
+                    }
+                });
+
+                if(!dataExist){
+                    instData.push(imgData);
+                    id++;
+                }else{
+                    instData = instData.filter(function(item,index) { 
+                        return index !== removeIndex;
                     });
+                    id--;
+                }
+                $('#selected-images-main').empty();
+                myFunction(instData);
+            });
+        });
+
+        var flag = 0;
+        function myFunction(instData){ 
+
+            instData.forEach(function(item){
+                flag = flag + 1;
+                var progressTmpl = mageTemplate('#instagram-product-slider-image'), tmpl;
+                tmpl = progressTmpl({
+                    data: item
+                });
+                $('#selected-images-main').append(tmpl);
+            });
+        }
+
+        $(document).ajaxSuccess(function() {
+            $(this).delay(300).queue(function() {
+                $("input[name='products_id']").each(function() {
+                    if ($(this).val() == window.prodcutEditId) {
+                        $(this).prop('checked', true);
+                    }
+                });
+            });
+        });
+
+        var selectedStoreView = <?php echo json_encode($selectedStore); ?>;
+        var storeViewIndex = JSON.parse(selectedStoreView);
+        $(document).ready(function(){
+            if(storeViewIndex != null){
+                for (var i = 0; i < storeViewIndex.length; i++) {
+                    var index = storeViewIndex[i];
+                    $('#instagram_main_store_view option[value=' + index + ']').attr('selected', true);
                 }
             }
-
-
-            jQuery(document).ajaxSuccess(function() {
-                jQuery(this).delay(300).queue(function() {
-                    jQuery("input[name='products_id']").each(function() {
-                        if (jQuery(this).val() == window.prodcutEditId) {
-                            jQuery(this).prop('checked', true);
-                        }
-                    });
-                });
-            });
-
         });
-    </script>
+
+    });
+</script>
+
+<style>
+img.imageSelect {
+    width: 65px;
+    padding: 10px;
+}
+</style>

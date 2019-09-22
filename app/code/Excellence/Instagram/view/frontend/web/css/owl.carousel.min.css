@@ -7,11 +7,3 @@
 
 
 .owl-nav{display: none;}
-#instagram-carousel .slider-main-div {
-    height: 200px;
-  }
-
-  #instagram-carousel .slider-main-div img {
-    height: 100%;
-    object-fit: cover;
-  }

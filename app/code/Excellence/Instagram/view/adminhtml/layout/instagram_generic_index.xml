@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+	<head>
+	    <css src="Excellence_Instagram::css/owl.theme.default.min.css"/>
+	    <css src="Excellence_Instagram::css/owl.carousel.min.css"/>
+	    <css src="Excellence_Instagram::css/custom.css"/>
+	    <css src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.12/jquery.bxslider.css" src_type="url"/>
+	    <css src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.12/jquery.bxslider.min.css" src_type="url"/>
+	    <script src="Excellence_Instagram::js/jquery.min.js"/>
+	    <script src="Excellence_Instagram::js/owl.carousel.min.js"/>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.12/jquery.bxslider.min.js" src_type="url"/>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.12/jquery.bxslider.js" src_type="url"/>
+	    <script src="Excellence_Instagram::js/script.js"/>
+	</head>
+    <body>
+        <referenceContainer name="content">
+            <block class="Excellence\Instagram\Block\Adminhtml\Generic" name="admin.generic.grid"/>
+        </referenceContainer>
+    </body>
+</page>

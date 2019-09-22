@@ -96,12 +96,12 @@ class Edit extends \Magento\Backend\App\Action
 		/** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->_initAction();
         $resultPage->addBreadcrumb(
-            $id ? __('Edit Instagram') : __('New Instagram'),
-            $id ? __('Edit Instagram') : __('New Instagram')
+            $id ? __('Edit Instagram') : __('Product Slider'),
+            $id ? __('Edit Instagram') : __('Product Slider')
         );
-        $resultPage->getConfig()->getTitle()->prepend(__('Instagram'));
+        $resultPage->getConfig()->getTitle()->prepend(__('Product Slider'));
         $resultPage->getConfig()->getTitle()
-            ->prepend($model->getId() ? $model->getTitle() : __('New Instagram'));
+            ->prepend($model->getId() ? $model->getTitle() : __('Create Product Slider'));
         return $resultPage;
     }
 }

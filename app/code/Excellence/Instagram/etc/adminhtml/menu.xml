@@ -1,10 +1,9 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <!-- <add id="Excellence_Instagram::instagram" title="Instagram" module="Excellence_Instagram" sortOrder="30" resource="Excellence_Instagram::instagram"/> -->
         <add id="Excellence_Instagram::instagram_title" title="Instagram" module="Excellence_Instagram" sortOrder="10"  resource="Excellence_Slider::excellence_slider_title" parent="Excellence_Base::base"/>
-       
         <add id="Excellence_Instagram::instagram_manage_config" title="Instagram Configuration" module="Excellence_Instagram" sortOrder="10" parent="Excellence_Instagram::instagram_title" action="adminhtml/system_config/edit/section/instagramSection" resource="Excellence_Instagram::manage"/>
-         <add id="Excellence_Instagram::instagram_manage" title="Instagram Slider Configuration" module="Excellence_Instagram" sortOrder="10" parent="Excellence_Instagram::instagram_title" action="instagram/index/" resource="Excellence_Instagram::manage"/>
+         <add id="Excellence_Instagram::instagram_manage" title="Product Slider Configuration" module="Excellence_Instagram" sortOrder="10" parent="Excellence_Instagram::instagram_title" action="instagram/index/" resource="Excellence_Instagram::manage"/>
+         <add id="Excellence_Instagram::instagram_generic_sliders" title="Generic Sliders" module="Excellence_Instagram" sortOrder="10" parent="Excellence_Instagram::instagram_title" action="instagram/generic/" resource="Excellence_Instagram::instagram_generic_sliders"/>
     </menu>
 </config>

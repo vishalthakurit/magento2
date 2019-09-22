@@ -54,7 +54,7 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
 
         $form->setHtmlIdPrefix('instagram_main_');
 
-        $fieldset = $form->addFieldset('base_fieldset', ['legend' => __('Instagram Information')]);
+        $fieldset = $form->addFieldset('base_fieldset', ['legend' => __('Select Instagram Images')]);
 
         if ($model->getId()) {
             $fieldset->addField('instagram_id', 'hidden', ['name' => 'instagram_id']);
@@ -92,7 +92,7 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
      */
     public function getTabLabel()
     {
-        return __('Instagram Information');
+        return __('Instagram Images');
     }
 
     /**
@@ -102,7 +102,7 @@ class Main extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
      */
     public function getTabTitle()
     {
-        return __('Instagram Information');
+        return __('Select Instagram Images');
     }
 
     /**

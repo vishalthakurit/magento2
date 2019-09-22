@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+ 
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+    	<!-- <referenceBlock name="top.search" remove="true" /> -->
+        <referenceContainer name="header-wrapper">
+            <block class="Magento\Framework\View\Element\Template" name="sample" template="Magento_Search::sample.phtml" />
+        </referenceContainer>
+        <!-- <referenceContainer name="footer">
+            <container after="footer_links" name='social.links' htmlTag="ul" htmlClass="footer links">
+                <block name="facebook" class="Magento\Framework\View\Element\Template" template="Magento_Sociallinks::footer/facebook.phtml" />
+                <block name="google" class="Magento\Framework\View\Element\Template" template="Magento_Theme::footer/google.phtml" />
+                <block name="twitter" class="Magento\Framework\View\Element\Template" template="Magento_Theme::footer/twitter.phtml" />
+            </container>
+        </referenceContainer> -->
+    </body>
+</page>
