@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+ 
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+         <referenceContainer name="product.info.price">
+            <container after="product.info.stock.sku" name='custom-product-text' htmlTag="div" htmlClass="vishal_product_text">
+                <block name="custom_text" class="Magento\Framework\View\Element\Template" template="Magento_Catalog::content/text.phtml" />
+            </container>
+        </referenceContainer>
+    </body>
+</page>
