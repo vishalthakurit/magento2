@@ -11,10 +11,21 @@ $objectManager =  \Magento\Framework\App\ObjectManager::getInstance();
 $appState = $objectManager->get('\Magento\Framework\App\State');
 $appState->setAreaCode('frontend');
 
-$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+// $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 $customerObj = $objectManager->create('Magento\Customer\Model\Customer')->getCollection();
 foreach($customerObj as $customerObjdata )
 {
     echo "<pre/>";
     print_r($customerObjdata ->getData());
 }
+
+echo "<br>===========================<br>";
+
+$quoteId = 1;
+$quote = $obj->get('Magento\Checkout\Model\Session')
+             ->getQuote()
+             ->load($quoteId);
+ 
+echo '=======<pre>';
+print_r($quote->getOrigData());
+echo '</pre>';

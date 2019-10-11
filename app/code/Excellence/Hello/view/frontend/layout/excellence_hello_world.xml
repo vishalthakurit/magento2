@@ -1,9 +1,7 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">       
     <referenceContainer name="content">
-        <block
-            template="content.phtml"
-            class="Excellence\Hello\Block\Main"
-            name="excellence_test"/>
+        <block template="content.phtml" class="Excellence\Hello\Block\Main" name="excellence_test"/>
+        <block class="Excellence\Hello\Block\Account" name="customer_account_knockout_test" template="Excellence_Hello::account/knockout.phtml" cacheable="false"/>
     </referenceContainer>
 </page>

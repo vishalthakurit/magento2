@@ -1,0 +1,27 @@
+<div id="custom-component" data-bind="scope:'customcomponent'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+    <script type="text/x-magento-init">
+    {
+        "#custom-component": {
+            "Magento_Ui/js/core/app": {
+               "components": {
+                    "customcomponent": {
+                        "component": "Excellence_Hello/js/custom-component"
+                    }
+                }
+            }
+        }
+    }
+    </script>
+</div>
+<div>
+<h1><?php echo __('Store Id is - <strong>%1</strong>',$block->getStoreId()); ?></h1>
+
+<?php 
+
+// $proData = $block->getProduct($block->getStoreId(),'1'); 
+// echo "<pre>"; print_r($proData->getData());
+
+?>
+
+</div>
