@@ -5,16 +5,15 @@ class Account extends \Magento\Framework\View\Element\Template
 {   
     protected $_testFactory;
     public function __construct(
-        \Magento\Framework\View\Element\Template\Context $contexts,
+        \Magento\Framework\View\Element\Template\Context $context,
         \Excellence\Hello\Model\TestFactory $testFactory,
-        \Magento\Catalog\Model\ProductFactory $productFactory,
-        \Magento\Backend\Block\Template\Context $context,        
+        \Magento\Catalog\Model\ProductFactory $productFactory,  
         array $data = []
     )
     {
         $this->_testFactory = $testFactory;
         $this->productFactory = $productFactory;
-        parent::__construct($context, $data, $contexts);
+        parent::__construct($context, $data);
     }
 
     protected function _prepareLayout()

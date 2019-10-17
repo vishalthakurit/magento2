@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <listingToolbar name="listing_top">
+        <massaction name="listing_massaction">
+            <action name="sendconfirmation">
+                <settings>
+                    <confirm>
+                        <message translate="true">Are you sure to send Confirmation Mail to selected customers?</message>
+                        <title translate="true">Send Mail</title>
+                    </confirm>
+                    <url path="hello/index/massSendConfirmation"/> <!-- your custom controller to handle request -->
+                    <type>sendconfirmation</type>
+                    <label translate="true">Send Confirmation</label>
+                </settings>
+            </action>
+        </massaction>
+    </listingToolbar>
+</listing>

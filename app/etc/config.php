@@ -16,7 +16,7 @@ return [
         'Magento_Indexer' => 1,
         'Excellence_Base' => 1,
         'Magento_Customer' => 1,
-        'Excellence_EmailAttachment' => 1,
+        'Excellence_EmailAttachment' => 0,
         'Excellence_Hello' => 1,
         'Excellence_Instagram' => 1,
         'Excellence_Payment' => 1,
