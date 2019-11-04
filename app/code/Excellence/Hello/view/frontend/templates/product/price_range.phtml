@@ -1,0 +1,11 @@
+<?php
+$currentProduct = $this->getProduct();
+$regularPrice = $currentProduct->getPriceInfo()->getPrice('regular_price');
+?>
+<div class='price-box' style="border: 1px solid blueviolet;padding: 10px;width: 50%;">
+    <span class="price">
+        <?php
+            echo '<b>Min : </b>'.$regularPrice->getMinRegularAmount().' - <b>Max : </b>'.$regularPrice->getMaxRegularAmount();
+        ?>
+    </span>
+</div>
